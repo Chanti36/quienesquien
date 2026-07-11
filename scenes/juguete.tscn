@@ -1,0 +1,58 @@
+[gd_scene format=3 uid="uid://g3yo2xy2tg3s"]
+
+[ext_resource type="Script" uid="uid://vni44ekwa3aa" path="res://scripts/jugueteCtrl.gd" id="1_k8m7s"]
+[ext_resource type="Shader" uid="uid://c3f1lhvm1pl0a" path="res://misc/shaders/outline.gdshader" id="2_nc4lr"]
+[ext_resource type="Script" uid="uid://lscajlm328fc" path="res://scripts/fichaCtrl.gd" id="3_ur4ki"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_b52nb"]
+size = Vector3(1, 0.1, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_pb3um"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_nc4lr"]
+render_priority = 0
+shader = ExtResource("2_nc4lr")
+shader_parameter/step_count = 3
+shader_parameter/thickness = 1.0
+shader_parameter/edge_color = Color(0, 0, 0, 1)
+shader_parameter/fade_start = 1.0
+shader_parameter/fade_length = 200.0
+
+[sub_resource type="BoxMesh" id="BoxMesh_eoqbr"]
+size = Vector3(0.1, 0.18894044, 0.04257813)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_m2pct"]
+size = Vector3(0.10687256, 0.19354248, 0.047698975)
+
+[node name="Juguete" type="Node3D" unique_id=1374627053]
+script = ExtResource("1_k8m7s")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1355255238]
+transform = Transform3D(1, 0, 0, 0, 0.7071068, 0.7071068, 0, -0.7071068, 0.7071068, 0, 0.20941687, 0.75309795)
+
+[node name="Tabla" type="MeshInstance3D" parent="." unique_id=1751379389]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.010256052, -0.45, 0)
+mesh = SubResource("BoxMesh_b52nb")
+
+[node name="Ficha" type="MeshInstance3D" parent="Tabla" unique_id=2110926514]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2478324, 0.18615401, 0.15898977)
+material_override = SubResource("ShaderMaterial_pb3um")
+material_overlay = SubResource("ShaderMaterial_nc4lr")
+mesh = SubResource("BoxMesh_eoqbr")
+script = ExtResource("3_ur4ki")
+
+[node name="Area3D" type="Area3D" parent="Tabla/Ficha" unique_id=1868549532]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tabla/Ficha/Area3D" unique_id=1267524129]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0011291355, -0.0007019043, -0.00077819824)
+shape = SubResource("BoxShape3D_m2pct")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="." unique_id=464048974]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 1.0371385, 0)
+visible = false
+spot_range = 1.6065959
+spot_angle = 22.12324
+
+[connection signal="input_event" from="Tabla/Ficha/Area3D" to="." method="_on_ficha_input_event"]
+[connection signal="mouse_entered" from="Tabla/Ficha/Area3D" to="Tabla/Ficha" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Tabla/Ficha/Area3D" to="Tabla/Ficha" method="_on_mouse_exited"]
