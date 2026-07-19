@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://g3yo2xy2tg3s"]
 
 [ext_resource type="Script" uid="uid://vni44ekwa3aa" path="res://scripts/jueguete/jugueteCtrl.gd" id="1_k8m7s"]
-[ext_resource type="PackedScene" uid="uid://bb1qpfdob73vm" path="res://scenes/ficha.tscn" id="2_ur4ki"]
+[ext_resource type="PackedScene" uid="uid://bb1qpfdob73vm" path="res://scenes/jueguete/ficha.tscn" id="2_ur4ki"]
 [ext_resource type="Script" uid="uid://ba858hnuxrug1" path="res://scripts/jueguete/cameraCtrl.gd" id="4_o1xot"]
-[ext_resource type="Shader" uid="uid://cncsmhyj06oy3" path="res://misc/vignette.gdshader" id="4_uw0po"]
+[ext_resource type="Shader" uid="uid://cncsmhyj06oy3" path="res://misc/shaders/vignette.gdshader" id="4_uw0po"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_b52nb"]
 size = Vector3(1, 0.1, 1)

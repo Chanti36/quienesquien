@@ -2,7 +2,7 @@ extends Node3D
 
 @onready var _tabla: MeshInstance3D = $Tabla
 var _vignetteMaterial : Material
-var v3_tablaPos := Vector3(0,0,0)
+var v3_tablaPos := Vector3(0, 0, 0)
 
 var b_canEnd := false
 

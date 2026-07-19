@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Speaker" format=3 uid="uid://jm6e7wyuf2ii"]
+
+[ext_resource type="Script" uid="uid://chybjwj2xnwa6" path="res://scripts/dialogo/speaker.gd" id="1_0xf75"]
+
+[resource]
+script = ExtResource("1_0xf75")
+name = "TEST"
+color = Color(1, 0, 0, 1)
+metadata/_custom_type_script = "uid://chybjwj2xnwa6"

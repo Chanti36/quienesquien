@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://d2iqnyr5luebc"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b52nb"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[node name="DialogueOption" type="MarginContainer" unique_id=1273879824]
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1015268118]
+layout_mode = 2
+
+[node name="Num" type="Label" parent="HBoxContainer" unique_id=1061153771]
+layout_mode = 2
+text = "1."
+
+[node name="Button" type="Button" parent="HBoxContainer" unique_id=2081303739]
+layout_mode = 2
+theme_override_colors/font_pressed_color = Color(0.8393537, 0, 0.13169888, 1)
+theme_override_colors/font_hover_color = Color(0.60932994, 0.60933006, 0.6093311, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_b52nb")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_b52nb")
+theme_override_styles/hover = SubResource("StyleBoxFlat_b52nb")
+theme_override_styles/focus = SubResource("StyleBoxFlat_b52nb")
+text = "Option 1"

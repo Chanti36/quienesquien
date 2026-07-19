@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://tyxingrnfuhv"]
 
-[ext_resource type="PackedScene" uid="uid://g3yo2xy2tg3s" path="res://scenes/juguete.tscn" id="1_uc3sl"]
+[ext_resource type="PackedScene" uid="uid://g3yo2xy2tg3s" path="res://scenes/jueguete/juguete.tscn" id="1_uc3sl"]
 [ext_resource type="Shader" uid="uid://bews7vtrahy6e" path="res://misc/shaders/transicion.gdshader" id="2_uc3sl"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_b52nb"]
