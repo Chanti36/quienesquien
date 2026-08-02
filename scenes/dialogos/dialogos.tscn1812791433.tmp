@@ -1,0 +1,94 @@
+[gd_scene format=3 uid="uid://2off632pfkyf"]
+
+[ext_resource type="Script" uid="uid://dnuw15skcqbub" path="res://scripts/dialogo/dialogueDrawer.gd" id="1_2nvxk"]
+[ext_resource type="Script" uid="uid://cd18wsstdapmq" path="res://scripts/dialogo/dialogoCtrl.gd" id="1_hrvb4"]
+[ext_resource type="Texture2D" uid="uid://b6eu6ed4sbcxl" path="res://sprites/test/escenario_plaza.png" id="2_xhsqs"]
+[ext_resource type="Texture2D" uid="uid://ci1c7ar64047y" path="res://sprites/test/char.png" id="3_p6f6h"]
+[ext_resource type="Texture2D" uid="uid://ihoyjy5juhyk" path="res://sprites/test/cuadro_texto.png" id="5_a377t"]
+[ext_resource type="Texture2D" uid="uid://bl8ndlrr4i02k" path="res://sprites/test/ui_marco.png" id="5_j4bdb"]
+
+[sub_resource type="Theme" id="Theme_yljqp"]
+default_font_size = 16
+RichTextLabel/colors/default_color = Color(0.70796657, 0.7079665, 0.7079665, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_j4bdb"]
+texture = ExtResource("5_a377t")
+
+[node name="DialogueCtrl" type="Control" unique_id=1630039718]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_hrvb4")
+
+[node name="Fondo" type="TextureRect" parent="." unique_id=2116317197]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_xhsqs")
+
+[node name="PJPivot" type="Control" parent="." unique_id=1168617682]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 248.0
+offset_right = 248.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(0.43999997, 0.43999997)
+
+[node name="Char" type="TextureRect" parent="PJPivot" unique_id=837712290]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1023.0
+offset_top = -2713.0
+offset_right = 1023.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("3_p6f6h")
+
+[node name="DialogueDrawer" type="MarginContainer" parent="." unique_id=115939764]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_left = 100.0
+offset_right = 735.0
+grow_vertical = 2
+theme = SubResource("Theme_yljqp")
+theme_override_constants/margin_top = 45
+theme_override_constants/margin_bottom = 47
+script = ExtResource("1_2nvxk")
+theme_override_constants/margin_top = 45
+theme_override_constants/margin_bottom = 47
+
+[node name="PanelContainer" type="PanelContainer" parent="DialogueDrawer" unique_id=234794570]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_j4bdb")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="DialogueDrawer/PanelContainer" unique_id=1389591844]
+layout_mode = 2
+theme_override_constants/scrollbar_h_separation = 10
+
+[node name="DialogueEntries" type="VBoxContainer" parent="DialogueDrawer/PanelContainer/ScrollContainer" unique_id=1742221018]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+alignment = 2
+
+[node name="Marco" type="TextureRect" parent="." unique_id=624198283]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("5_j4bdb")

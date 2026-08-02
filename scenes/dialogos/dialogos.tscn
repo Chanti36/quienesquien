@@ -2,17 +2,24 @@
 
 [ext_resource type="Script" uid="uid://dnuw15skcqbub" path="res://scripts/dialogo/dialogueDrawer.gd" id="1_2nvxk"]
 [ext_resource type="Script" uid="uid://cd18wsstdapmq" path="res://scripts/dialogo/dialogoCtrl.gd" id="1_hrvb4"]
+[ext_resource type="Script" uid="uid://dilkgkw31rvw6" path="res://scripts/dialogo/parallax.gd" id="2_nqn2e"]
+[ext_resource type="Texture2D" uid="uid://b6eu6ed4sbcxl" path="res://sprites/test/escenario_plaza.png" id="2_xhsqs"]
+[ext_resource type="Texture2D" uid="uid://ci1c7ar64047y" path="res://sprites/test/char.png" id="3_p6f6h"]
+[ext_resource type="FontFile" uid="uid://7m7j0oq00v6y" path="res://misc/IbarraRealNova-VariableFont_wght.ttf" id="5_8v3fu"]
+[ext_resource type="Texture2D" uid="uid://ihoyjy5juhyk" path="res://sprites/test/cuadro_texto.png" id="5_a377t"]
+[ext_resource type="Texture2D" uid="uid://bl8ndlrr4i02k" path="res://sprites/test/ui_marco.png" id="5_j4bdb"]
+[ext_resource type="Texture2D" uid="uid://brq3feimnaslo" path="res://sprites/test/degradado_texto.png" id="7_kmkb5"]
+[ext_resource type="Script" uid="uid://dfs3mddq0kay5" path="res://scripts/dialogo/dialogueEntry.gd" id="8_dhv4a"]
 
 [sub_resource type="Theme" id="Theme_yljqp"]
 default_font_size = 16
+Button/font_sizes/font_size = 25
+Button/fonts/font = ExtResource("5_8v3fu")
 RichTextLabel/colors/default_color = Color(0.70796657, 0.7079665, 0.7079665, 1)
+RichTextLabel/font_sizes/normal_font_size = 25
+RichTextLabel/fonts/normal_font = ExtResource("5_8v3fu")
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s387p"]
-bg_color = Color(0, 0, 0, 0.78431374)
-border_width_left = 5
-border_width_top = 5
-border_width_right = 5
-border_width_bottom = 5
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_m2pct"]
 
 [node name="DialogueCtrl" type="Control" unique_id=1630039718]
 layout_mode = 3
@@ -23,26 +30,145 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_hrvb4")
 
+[node name="Parallax" type="Control" parent="." unique_id=732161371]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("2_nqn2e")
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="Parallax" unique_id=30386127]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="Parallax/ParallaxBackground" unique_id=1835679459]
+
+[node name="Background" type="TextureRect" parent="Parallax/ParallaxBackground/ParallaxLayer" unique_id=2116317197]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1920.0
+offset_bottom = 1080.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_xhsqs")
+
+[node name="ParallaxChar" type="ParallaxBackground" parent="Parallax" unique_id=1452795238]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="Parallax/ParallaxChar" unique_id=880303096]
+
+[node name="PJChar" type="Control" parent="Parallax/ParallaxChar/ParallaxLayer" unique_id=1168617682]
+layout_mode = 3
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 1208.0
+offset_top = 1080.0
+offset_right = 1208.0
+offset_bottom = 1080.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(0.43999997, 0.43999997)
+
+[node name="Char" type="TextureRect" parent="Parallax/ParallaxChar/ParallaxLayer/PJChar" unique_id=837712290]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1023.0
+offset_top = -2713.0
+offset_right = 1023.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("3_p6f6h")
+
+[node name="DialogueBg" type="TextureRect" parent="." unique_id=1715875861]
+layout_mode = 0
+offset_left = 105.0
+offset_top = 46.0
+offset_right = 737.0
+offset_bottom = 1036.0
+texture = ExtResource("5_a377t")
+
 [node name="DialogueDrawer" type="MarginContainer" parent="." unique_id=115939764]
 layout_mode = 1
 anchors_preset = 9
 anchor_bottom = 1.0
+offset_left = 100.0
+offset_right = 735.0
 grow_vertical = 2
 theme = SubResource("Theme_yljqp")
-theme_override_constants/margin_left = 40
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 45
+theme_override_constants/margin_right = 25
+theme_override_constants/margin_bottom = 106
 script = ExtResource("1_2nvxk")
 
 [node name="PanelContainer" type="PanelContainer" parent="DialogueDrawer" unique_id=234794570]
 custom_minimum_size = Vector2(300, 0)
 layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_s387p")
+theme_override_styles/panel = SubResource("StyleBoxEmpty_m2pct")
 
 [node name="ScrollContainer" type="ScrollContainer" parent="DialogueDrawer/PanelContainer" unique_id=1389591844]
 layout_mode = 2
-theme_override_constants/scrollbar_h_separation = 10
+theme_override_colors/scroll_hint_vertical_color = Color(0.44313726, 0.3254902, 0.19607843, 1)
+theme_override_colors/scroll_hint_horizontal_color = Color(0.70980394, 0.59607846, 0.37254903, 1)
+theme_override_constants/scrollbar_h_separation = 30
 
 [node name="DialogueEntries" type="VBoxContainer" parent="DialogueDrawer/PanelContainer/ScrollContainer" unique_id=1742221018]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 alignment = 2
+
+[node name="DialogueEntry" type="MarginContainer" parent="DialogueDrawer/PanelContainer/ScrollContainer/DialogueEntries" unique_id=71812865]
+layout_mode = 2
+script = ExtResource("8_dhv4a")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="DialogueDrawer/PanelContainer/ScrollContainer/DialogueEntries/DialogueEntry" unique_id=171339835]
+layout_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="DialogueDrawer/PanelContainer/ScrollContainer/DialogueEntries/DialogueEntry/VBoxContainer" unique_id=929887069]
+layout_mode = 2
+bbcode_enabled = true
+text = "
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+"
+fit_content = true
+
+[node name="DialogueOver" type="TextureRect" parent="." unique_id=374720331]
+layout_mode = 0
+offset_left = 105.0
+offset_top = 46.0
+offset_right = 737.0
+offset_bottom = 1036.0
+mouse_filter = 2
+mouse_behavior_recursive = 1
+texture = ExtResource("7_kmkb5")
+
+[node name="Marco" type="TextureRect" parent="." unique_id=624198283]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+mouse_behavior_recursive = 1
+texture = ExtResource("5_j4bdb")
+
+[connection signal="mouse_entered" from="DialogueBg" to="." method="_mouse_over_dialogue_box"]
+[connection signal="mouse_exited" from="DialogueBg" to="." method="_mouse_exit_dialogue_box"]

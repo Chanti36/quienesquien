@@ -33,9 +33,12 @@ func mouseInput(action : int) -> void:
 			b_canInteract = false
 
 func _on_area_3d_input_event(_camera: Node, event: InputEvent, _event_position: Vector3, _normal: Vector3, _shape_idx: int) -> void:
+	if !b_canInteract:
+		return
+	
 	var mouse_click = event as InputEventMouseButton
-	if mouse_click and mouse_click.button_index == 1 and mouse_click.pressed:
-		if b_canInteract:
+	if mouse_click and mouse_click.pressed:
+		if mouse_click.button_index == 1: 
 			if b_active:
 				$"../../..".FichaClick(-1) 
 				animationPlayer.play("to_disabled")
@@ -44,3 +47,13 @@ func _on_area_3d_input_event(_camera: Node, event: InputEvent, _event_position: 
 				$"../../..".FichaClick(1) 
 				animationPlayer.play("to_active")
 				b_active = true
+				
+		if mouse_click.button_index == 2:
+			$"../../..".FichaFocus($"../Pivot")
+
+
+
+
+
+
+#

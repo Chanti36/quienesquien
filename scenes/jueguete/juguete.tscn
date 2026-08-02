@@ -5,6 +5,10 @@
 [ext_resource type="Script" uid="uid://ba858hnuxrug1" path="res://scripts/jueguete/cameraCtrl.gd" id="4_o1xot"]
 [ext_resource type="Shader" uid="uid://cncsmhyj06oy3" path="res://misc/shaders/vignette.gdshader" id="4_uw0po"]
 
+[sub_resource type="Environment" id="Environment_nqn2e"]
+background_mode = 1
+background_color = Color(0.16, 0.112986654, 0.0944, 1)
+
 [sub_resource type="BoxMesh" id="BoxMesh_b52nb"]
 size = Vector3(1, 0.1, 1)
 
@@ -17,7 +21,8 @@ shader_parameter/MainAlpha = 0.50000002375
 script = ExtResource("1_k8m7s")
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1355255238]
-transform = Transform3D(1, 0, 0, 0, 0.70710677, 0.70710677, 0, -0.70710677, 0.70710677, 0, 0.2094168, 0.7530979)
+transform = Transform3D(1, 0, 0, 0, 0.70710677, 0.70710677, 0, -0.70710677, 0.70710677, 0, 0.2, 0.75)
+environment = SubResource("Environment_nqn2e")
 
 [node name="Tabla" type="MeshInstance3D" parent="." unique_id=1751379389]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.010256052, -0.45, 0)

@@ -1,48 +1,101 @@
 extends MarginContainer
 
-
-var _engine: PatterEngine
-var _flow: PatterFlow
-
-
 const SPEAKERFOLDER: String = "res://personajes/"
 const DIALOGUEFOLDER: String = "res://dialogos/"
 
 const _dialogueEntry = preload("uid://rfhdnnqfwv1m")
-@onready var _dialogueEntriesContaier: Control =$PanelContainer/ScrollContainer/DialogueEntries
+const _dialogueOption = preload("uid://d2iqnyr5luebc")
+
+@onready var _dialogueEntriesContaier: Control = $PanelContainer/ScrollContainer/DialogueEntries
 @onready var _scrollContainer: ScrollContainer = $PanelContainer/ScrollContainer
 @onready var _scrollBar : ScrollBar = _scrollContainer.get_v_scroll_bar()
+
+
+var loreline: Loreline = Loreline.shared()
+
+var b_dialogueShown := false
+
+## CUESTIONES
+##
+## Avanza automático o con click
+##		Si es con clicks dentro o fuera de la caja de texto por coherencia pero barra de scroll
+##
+##
 
 
 func _ready() -> void:
 	#SCROLLBAR
 	_scrollBar.changed.connect(_onScrollBarChanged)
-	Start("tour")
+	Start("CoffeeShop")
 
 
 func Start(dialogueName : String) -> void:
-	var dialoguePath = "%s%s.patterc" % [DIALOGUEFOLDER, dialogueName]
-	if !ResourceLoader.exists(dialogueName):
-		_append("ERROR: no dialogue found")
-	#PATTER
-	var json := FileAccess.get_file_as_string(dialoguePath)
-	if json == "":
-		_append("ERROR: missing text")
+	var dialoguePath = "%s%s.lor" % [DIALOGUEFOLDER, dialogueName]
+	var script = await loreline.parse(dialoguePath)
+	if script == null:
+		push_error("Failed to parse CoffeeShop.lor")
 		return
-	var bundle = PatterBundle.load_from_string(json)
-	if bundle == null:
-		_append("ERROR: failed to parse")
-		return
-	_engine = PatterEngine.new(bundle)
+	loreline.play(script, _on_dialogue, _on_choice, _on_finished)
+	
+	print("--START ", dialogueName)
 
 
-func Next() -> void:
+
+#region LORELINE
+
+func _on_dialogue(interp: LorelineInterpreter, character: String, text: String, tags: Array, advance: Callable) -> void:
+	if !b_dialogueShown:
+		if character != "":
+			var display_name: String = interp.get_character_field(character, "name")
+			if display_name != "":
+				character = display_name
+			Next("------- " + character + ": " + text)
+		else:
+			Next(text)
+		b_dialogueShown = true
+	
+	
+	#await get_tree().create_timer(0.6).timeout
+	
+	while not Input.is_action_just_pressed("ui_accept"):
+		await get_tree().process_frame
+	advance.call()
+	b_dialogueShown = false
+
+
+func _on_choice(_interp: LorelineInterpreter, options: Array, select: Callable) -> void:
 	var entry = _dialogueEntry.instantiate()
 	_dialogueEntriesContaier.add_child(entry)
-	entry.SetContent(
-		GetSpeakerResource("speakerTest"), 
-		"Like a fly to the ointment, your conscience sticks to it. The limbed and headed machine of pain and undignified suffering is firing up again. It wants to walk the desert. Hurting. Longing. Dancing to disco music.",
-	 	"[success]")
+	
+	var enabled_indices: Array[int] = []
+	for i in range(options.size()):
+		if options[i]["enabled"]:
+			enabled_indices.append(i)
+			#print("  [" + str(enabled_indices.size()) + "] " + options[i]["text"])
+			var option = _dialogueOption.instantiate()
+			entry.get_child(0).get_child(1).add_child(option)
+			option.get_child(0).get_child(0).text = str(enabled_indices.size())
+			option.get_child(0).get_child(1).text = options[i]["text"]
+	
+	# In a real project, wait for player input here.
+	# For this example, automatically select the first enabled choice:
+	#select.call(enabled_indices[0])
+
+
+func _on_finished(_interp: LorelineInterpreter) -> void:
+	print("--- The End ---")
+	DIALOGUEENDED.emit()
+
+signal DIALOGUEENDED
+
+#endregion
+
+func Next(text : String) -> void:
+	var entry = _dialogueEntry.instantiate()
+	_dialogueEntriesContaier.add_child(entry)
+	
+	entry.SetContent( GetSpeakerResource("speakerTest"), text)
+
 
 func GetSpeakerResource(speakerName : String) -> Speaker:
 	var speakerPath = "%s%s.tres" % [SPEAKERFOLDER, speakerName]
@@ -54,19 +107,3 @@ func _onScrollBarChanged() -> void:
 	var scrollValue = _scrollBar.max_value
 	if scrollValue != _scrollContainer.scroll_vertical:
 		_scrollContainer.scroll_vertical = scrollValue
-
-#region PATTER
-
-func _append(bbcode: String) -> void:
-	var label := RichTextLabel.new()
-	label.bbcode_enabled = true
-	label.fit_content = true
-	label.text = bbcode
-	_transcript.add_child(label)
-	await get_tree().process_frame  # let the label size before jumping to the end
-	_scroll.scroll_vertical = int(_scroll.get_v_scroll_bar().max_value)
-
-
-
-
-#endregion

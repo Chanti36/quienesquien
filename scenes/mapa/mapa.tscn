@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://cfkgeir0lbm7k"]
+
+[ext_resource type="Script" uid="uid://dexp7nfyvmed6" path="res://scripts/mapa/mapaCtrl.gd" id="1_p106v"]
+[ext_resource type="Texture2D" uid="uid://b6eu6ed4sbcxl" path="res://sprites/test/escenario_plaza.png" id="1_v373u"]
+[ext_resource type="Texture2D" uid="uid://dprs1jlagb1v" path="res://icon.svg" id="2_p106v"]
+
+[node name="Mapa" type="Control" unique_id=978579870]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_p106v")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1896004552]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_v373u")
+
+[node name="TextureButton" type="TextureButton" parent="." unique_id=1694046600]
+layout_mode = 0
+offset_left = 625.0
+offset_top = 235.0
+offset_right = 753.0
+offset_bottom = 363.0
+texture_normal = ExtResource("2_p106v")

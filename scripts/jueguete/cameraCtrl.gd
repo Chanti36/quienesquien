@@ -16,6 +16,11 @@ var v2_mousePos := Vector2(0,0)
 
 var v3_currAngle := Vector3(-45, 0, 0)
 
+
+
+#ESTO VIENE DE CALDERETA PARA HACER EL CUSTOM MOUSE
+
+
 func _ready() -> void:
 	pass
 	#Input.mouse_mode = Input.MOUSE_MODE_HIDDEN

@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://rfhdnnqfwv1m"]
 
 [ext_resource type="Script" uid="uid://dfs3mddq0kay5" path="res://scripts/dialogo/dialogueEntry.gd" id="1_yljqp"]
-[ext_resource type="PackedScene" uid="uid://d2iqnyr5luebc" path="res://scenes/dialogos/dialogueOption.tscn" id="2_rbefp"]
 
 [node name="DialogueEntry" type="MarginContainer" unique_id=71812865]
 anchors_preset = 15
@@ -21,7 +20,4 @@ text = "GODOT — TEXT"
 fit_content = true
 
 [node name="Options" type="VBoxContainer" parent="VBoxContainer" unique_id=954648669]
-layout_mode = 2
-
-[node name="DialogueOption" parent="VBoxContainer/Options" unique_id=1273879824 instance=ExtResource("2_rbefp")]
 layout_mode = 2

@@ -21,24 +21,28 @@ func SetContent(speaker : Speaker, text : String, passiveCheck: String ="")->voi
 		"" if passiveCheck == "" else "[color=#0f0]%s[/color]" % passiveCheck
 	] 
 	
-	var content = "%s%s" %[speakerInfo, text]
+	var content = "%s%s[indent][indent]" %[speakerInfo, text]
 	_text.text = content
 	
-	if _text.get_line_count() < 1:
-		return
-	
-	await get_tree().process_frame
-	
-	var lineBreackPos = _text.get_line_range(0).y
-	
-	#lineBreackPos = lineBreackPos - speakerInfo.length()
-	
-	var textWithLineIndent = text.insert(lineBreackPos, "[indent][indent]")
-	
-	_text.text = "%s%s" %[
-		speakerInfo,
-		textWithLineIndent
-	]
+	#if _text.get_line_count() < 1:
+		#return
+	#await get_tree().process_frame
+	#
+	#var lineBreackPos = _text.get_line_range(0).y
+	#lineBreackPos = lineBreackPos + speakerInfo.length()-1
+	#
+	#while _text.text[lineBreackPos] != " ":
+		#lineBreackPos -= 1
+		#if lineBreackPos == 0: break
+	#if _text.text[lineBreackPos] != " ":
+		#lineBreackPos -= 1
+#
+	#var textWithLineIndent = text.insert(lineBreackPos, "[indent][indent]")
+	#
+	#_text.text = "%s%s" %[
+		#speakerInfo,
+		#textWithLineIndent
+	#]
 	
 
 
