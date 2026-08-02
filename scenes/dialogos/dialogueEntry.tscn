@@ -16,7 +16,6 @@ layout_mode = 2
 [node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer" unique_id=929887069]
 layout_mode = 2
 bbcode_enabled = true
-text = "GODOT — TEXT"
 fit_content = true
 
 [node name="Options" type="VBoxContainer" parent="VBoxContainer" unique_id=954648669]

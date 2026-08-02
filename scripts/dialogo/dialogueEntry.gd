@@ -13,8 +13,8 @@ Limbic System – A fiery streak penetrates your skull, trying to force your eye
 # https://www.youtube.com/watch?v=oimMfjTE5mM 21:48
 
 func SetContent(speaker : Speaker, text : String, passiveCheck: String ="")->void:
-	
-	var speakerInfo = "[color=#%s]%s[/color]%s — " %\
+	# — 
+	var speakerInfo = "[color=#%s]%s[/color]%s " %\
 	[
 		speaker.color.to_html(),
 		speaker.name.to_upper(),

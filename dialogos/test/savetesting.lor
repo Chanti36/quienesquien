@@ -1,0 +1,82 @@
+import personajes
+
+
+NARRADOR: A dormir va el sol y, con él, despierta la noche. Baltasar entra en la plaza, desierta a estas horas, con paso presto. A la altura de la vista, unas cuantas ventanas muestran la lánguida luz de débiles velas, que mantienen la oscuridad a raya en los bastiones que los vecinos llaman sus casas. En esta plaza, que por tamaño no ganaría renombre, dos brillantes ojos acechan a Baltasar desde la oscuridad de los portones de la plaza. La cara del hidalgo Miguel se revela ante la luz de la noche y su cuerpo se lanza en paso presto hacia ti.
+MIGUEL: ¡Excelentísimo señor Baltasar!
+NARRADOR: El adusto hombre muestra sus deshechos dientes. Podrías confundirlo con un ogro de los cuentos para niños.
+
+choice
+ Miguel, debe saber que le detesto.
+  NARRADOR: No, no dirás eso. [SIGUE EN: Línea del narrador en la   opción 3]
+ ¡Mi queridísimo señor Miguel! ¿Qué se le ofrece a estas horas de la noche?
+  NARRADOR: Miguel recoge la pelota. El juego ha comenzado.
+ Buena noche, Miguel. ¿Necesita algo?
+  NARRADOR: No dejes que te afecte, bien sabes cómo manejar a un embustero.
+
+MIGUEL: Solo pasaba a saludar ¡Hace tan buena noche que es capaz de sacar a dos perros de raza de su casa!
+
+
+RUTA 1 - Miguel duda
+BALTASAR: Se me hace extraño verle a tales horas de la noche en la calle, Miguel. Le veo por las mañanas, por las noches... ¿es que usted no descansa?
+MIGUEL: Mi cuerpo no se hizo para el descanso. Mi alma es una que vaga, condenada a la lucha eterna, señor Baltasar. Sé que ve usted en mi cuerpo, en mi cara, en mis ojos, la marca de la batalla.
+NARRADOR: De abajo a arriba: Cojea de la pierna derecha, posible herida mal curada en la cadera; falta de mano (inicio frase con letra más pequeña) —alguno diría que este ejercicio es una falta de tacto— (fin frase con letra más pequeña) hasta el antebrazo, posible amputación; espada ajada, con el mango de un cuero cuidado pero deshecho, mucho uso; cara con quemadura en el lado izquierdo, mal cuidada. Este cuerpo es, como su habitante, una pena.
+MIGUEL: En fin, me preguntaba qué hace un alma como la suya, tan alejada de los misterios del mundo por urbanita, fuera de la venta a estas horas. (los nombres de los monstruos tiemblan) ¿No sabe usted que es la hora de las brujas, los bús, los sacamantecas, los ogros? (fin de tembleques)
+——————
+.Opción 1/ BALTASAR: ¿Qué sabe usted de aquellos (la palabra «nombres» se subraya) nombres? Sabe que no debería mencionar a los monstruos a la ligera, en especial en un caso tan serio.
+NARRADOR: Caíste en su trampa, el viejo se abalanza. Su cara brilla y su sonrisa arruga su adusta cara, ocultando la dura piel tras los horrendos dientes. Miguel ríe.
+MIGUEL: ¡JAJAJA, por fin preguntas! Cuánto has tardado en unir las piezas. Al menos veo que te queda algo de razón en esa cabeza y respetas los ocultos nombres de los amigos de la noche.
+.Opción 2/ BALTASAR: (copiando lo de que tiemblen los nombres de los monstruos) ¿Brujas, bús, sacamantecas, ogros? Venga ya, Miguel, sabe usted tan bien como yo que eso son cuentos de niños. Ya pasamos por hace décadas y la razón católica ya lo dijo: No somos franceses ni ingleses ni germanos, esa locura nacida contra las brujas no es cierta.
+NARRADOR: La última vez que viste a alguien tan enfadado fue hace 8 años. Ese joven de los comunes fue culpado de vuestros actos, de robar cual chiquillo pequeño. Sus gritos se escucharon durante horas. Te preparas para algo similar.
+MIGUEL: ¡Pamplinas! Hablas la lengua de alguien que no ha tocado un árbol fuera de un jardín, Baltasar. Tras las selvas de hierbas y matorrales, en la umbría de nuestra cordillera, las brujas bailan y comen impunes desde hace generaciones. ¡Por gente como (el «yo» tiembla y tiene un tamaño de letra mayor) YO podemos tener esta tranquilidad, así que tenga usted más respeto!
+NARRADOR: Resuenan un par de voces que salen de las ventanas, un «¡Cállese!», un «¿Otra vez, Miguel?». En el anonimato de la noche la gente muestra el verdadero amor que tienen al hidalgo. Éste lo nota y relaja el tiemble del ojo —y el orgullo— un poco.
+[Todas las opciones convergen en la siguiente conversación]
+
+BALTASAR: Creo que deberíamos de tener esta conversación en un lugar más privado. ¿Andamos?
+[Fin RUTA 1]
+RUTA 2 - Lucha con Miguel
+BALTASAR: No creo una palabra que sale de su boca, anciano. Viene a ver cómo va el caso y no sé si es por afición o necesidad. ¿Tiene algo que contarme?
+NARRADOR: ¿Quién crees que eres en esta bulla, Quevedo? Cuidado con las palabras que utilizas, Baltasar, que en la noche de los pueblos pueden ser las últimas.
+MIGUEL: ¿Conque esas gastamos con aquel que se acerca como amigo, joven? (podemos intentar que esta frase hasta el punto esté en color del oro o la plata brillante? Importante que brille) Tenga más cuidado con cómo habla usted a la sangre noble de estos lares, Baltasar, no sabe lo bien que nos tratamos entre nosotros por aquí. Yo que usted me iría a dormir y no buscaría tres pies al gato.
+NARRADOR: Con un giro de 180º y un grácil movimiento de capa, Miguel vuelve a su escondite: la absoluta oscuridad de la sombra nocturna de los resguardos de la plaza. Cualquiera diría que no se ha ganado nada con esta situación, pero usted no es cualquiera, ¿verdad, Baltasar?
+[Fin RUTA 2]
+Conversación entre tres personajes
+[Esta conversación se da entre Iris, Pepa y Margarita en el escenario del banco. Es por la mañana]
+NARRADOR: La mañana es fresca. El sol calienta perezosamente, mecido entre las esponjosas nubes cual chiquillo que flota en la playa. El aire mece las copas de los cipreses, las hojas de los olmos y, con ellas, genera un sonido parecido al agua que corre libre. La alegría de la vida choca con la tragedia que aconteció en Alboleta. Quizá este es el ciclo de la vida. ¿Seguirá así cuando no estés tú?
+NARRADOR: Una risa te saca de tu divagar entre los aires del mundo. En el banco del camino se han reunido tres personas: Paca, la anciana, y las dos chiquillas que tanto se sonríen. Te acercas a ellas, más por curiosidad que por oficio.
+BALTASAR: ¡Buenos días, jóvenes damas! ¿A qué se debe esta alegría?
+NARRADOR: Las chicas y la mujer anciana te miran con sonrisa burlona. Iris se ruboriza, mientras que la ganadera y la anciana se mantienen fuertes en la calma.
+PEPA: ¿A quién llamas joven, señor Baltasar? Me he ganado cada uno de los años que tengo, y no los cambiaría por nada del mundo. Tráteme con la cortesía de la edad aunque sea, (letras wave, osea haciendo la ola) querubín.
+MARGARITA: Eso, Pepa, si el caballero no la trata como debe dígamelo y le digo a Eulalia que le muerda el culo. Tenga cuidado Don Baltasar, mis ovejas son tan castizas como los habitantes de este pueblo, y tienen la misma mala leche.
+BALTASAR: ¡Vaya! Veo que me he colado en la fiesta sin invitación, disculpen mi osadía.
+PEPA: No sea tonto, quédese un poco más. El día ha salido bueno y estar al aire libre es sanísimo, míreme. No desperdicie la oportunidad y quédese con nosotras un rato si tiene tiempo.
+BALTASAR: Si no es mucha molestia me quedaré con gusto. Cuando estoy en las entrañas de Alboleta con el caso puedo llegar a agobiarme. Echo de menos el cielo de vez en cuando.
+IRIS: (el texto va más despacio) Qué bonito debe ser el cielo según lo que comentáis todos.
+MARGARITA: Anda, bonita, ¿ha vuelto esta amargura tan de mañana?
+IRIS: Perdón, los días buenos me siento un poco más acongojada que de normal. Siento el calor del sol en la piel y el viento en el pelo; escucho el canto de los pájaros y de la hojas meciéndose. Huelo la humedad que sale del paso de tierra, las flores entre la hierba y, si, también a Eulalia, pero no veo, no puedo ver nada de eso. Ya sabéis que me destroza.
+NARRADOR: El ambiente se enrarece un poco. Esta conversación parece haberse escuchado más de una o de dos veces en este banco, sin embargo, no la hace más fácil. Margarita pone su mano sobre la de Iris y esboza una leve sonrisa. Trata de encontrar con su mirada todo lo que pueda de la cara de Iris, beber de ella como de una fuente. Has visto esa mirada antes, en otro tiempo, la mirada con la que te miraba (la palabra María se tacha y desaparece en una transición de 2 segundos una vez aparece en pantalla. Sólo desaparece en transparencia, no hace falta ocupar el hueco) María cuando empezásteis. No sabías que pudieran sentirse así entre mujeres. Qué bello volver a verla.
+MARGARITA: Dios te ha puesto a prueba, Iris, ya escuchaste a Daciano. No sabemos por qué, pero lo estás haciendo muy bien seguro. Sabes que nos tienes a nosotras y a tu padre por cuanto necesitas. Nos complementamos.
+PEPA: ¿Y quién sabe si un día no descubrirás la vista? Mi madre decía saber curas para estas aflicciones, que dependían de dónde se necesitara en el cuerpo. Quizá algún día pase por aquí un curandero milagroso.
+
+SECCIÓN DE RUTAS
+RUTA 1 - Se habla de brujas
+BALTASAR: Para los ojos muchos curanderos, algunos brujos y brujas, encomiendan la cura a Santa Lucía. Con un trapo de tela encerado se mide la cabeza desde los ojos y, en el mismo trapo, se dibujan con carbón recién hecho los ojos de la persona. Luego, a la luz de una luna llena, se debe encontrar el curandero en un relicario a Santa Lucía, prender fuego al trapo y, con las gotas de cera, dibujar una cruz sobre su frente. Tras ello, se camina tres veces alrededor de la capilla.
+NARRADOR: La mención al hecho hace que el aire se enfríe. Pareces haber abierto la puerta a las memorias de una anciana. Ella te mira con delicadeza.
+PEPA: Cuánto sabe para ser tan joven, Baltasar, veo que la inquisición da una gran educación. Recuerdo algunas de esas instrucciones, mi madre las recitaba con el entusiasmo de quien sabe que tiene un secreto.
+IRIS: (el texto en un tamaño más pequeño) Ojalá tu madre estuviese viva, Pepa, y hiciera aquello del trapo conmigo.
+BALTASAR: No desees aquello que hacen las brujas, Iris. Puede ser problemático, más en un momento como este, delante de una figura de la inquisición.
+IRIS: Don Baltasar, ¿no cree que he tenido suficiente de este castigo? ¿Se podría imaginar vivir así por el resto de sus días? Brujas o curanderos, cualquiera podría ser bueno ahora mismo.
+BALTASAR: No sale nada bueno de tratar con brujas, Iris, tanto por los pactos que hacen como por quien lucha con ellos. La cosa se ha enfriado, pero hace unos años las piras brillaban como estrellas por toda España…
+MARGARITA: Déjelo ya, Baltasar, ¿no ve que es un tema complicado? Le hace daño a Pepa.
+NARRADOR: Pepa está hecha una bola en sí misma, con las manos entrelazadas. No le ves la cara, pero no hay gotas en su regazo. Quizá has apretado más de lo que deberías haber ahogado. Deformación profesional.
+BALTASAR: De nuevo, espero que me perdonen. Con el tema de los niños y la brujería me apago como vela al viento. Espero que no les toque de cerca el tema.
+NARRADOR: Margarita mira a Iris. Parece que el tema les toca, abraza y vive con ellos entre sus paredes.
+[Fin RUTA 1]
+RUTA 2 - No se habla de brujas
+BALTASAR: Ojalá un día puedas ver, Iris, te tendré en mis plegarias.
+NARRADOR: A Iris le brillan los ojos vacíos. Le vuelve una sonrisa, aquella que hace que el sol salga de su retiro en las nubes.
+IRIS: ¡Muchas gracias, Baltasar! Es usted un cielo. Espero que le vaya todo bien estos días, no me gustaría que este pueblo le apagase.
+NARRADOR: Y no lo hará, ¿verdad? Es sólo trabajo, no puede afectarle, no en esta primera vez.
+MARGARITA: Gracias por hacer reír a Iris, no hay nada mejor por las mañanas.
+PEPA: (el texto hace una wave) ¿No hay nada mejor, verdad Baltasar?
+NARRADOR: Pepa te mira con una ceja levantada. Claramente parece que estas dos jóvenes han visto muchas mañanas juntas, se ve en la confianza de sus gestos. De estas cosas no conoces, no es tu campo legal, pero esperas que no sea un problema. A ti no te lo parece.
+[Fin RUTA 2]

@@ -16,7 +16,7 @@ var loreline: Loreline = Loreline.shared()
 var b_dialogueShown := false
 
 ## CUESTIONES
-##
+#
 ## Avanza automático o con click
 ##		Si es con clicks dentro o fuera de la caja de texto por coherencia pero barra de scroll
 ##
@@ -26,17 +26,19 @@ var b_dialogueShown := false
 func _ready() -> void:
 	#SCROLLBAR
 	_scrollBar.changed.connect(_onScrollBarChanged)
-	Start("CoffeeShop")
+	
+	await get_tree().create_timer(1.0).timeout
+	Start("test/prueba")
 
 
 func Start(dialogueName : String) -> void:
 	var dialoguePath = "%s%s.lor" % [DIALOGUEFOLDER, dialogueName]
 	var script = await loreline.parse(dialoguePath)
 	if script == null:
-		push_error("Failed to parse CoffeeShop.lor")
+		push_error("Failed to parse " + dialoguePath)
 		return
+		
 	loreline.play(script, _on_dialogue, _on_choice, _on_finished)
-	
 	print("--START ", dialogueName)
 
 
@@ -49,16 +51,17 @@ func _on_dialogue(interp: LorelineInterpreter, character: String, text: String, 
 			var display_name: String = interp.get_character_field(character, "name")
 			if display_name != "":
 				character = display_name
-			Next("------- " + character + ": " + text)
+			else:
+				push_error("no display name for character: " + character)
+			Next(character + ": " + text)
 		else:
+			push_error("no character name on: " + text)
 			Next(text)
 		b_dialogueShown = true
 	
-	
-	#await get_tree().create_timer(0.6).timeout
-	
 	while not Input.is_action_just_pressed("ui_accept"):
 		await get_tree().process_frame
+		
 	advance.call()
 	b_dialogueShown = false
 
@@ -67,14 +70,12 @@ func _on_choice(_interp: LorelineInterpreter, options: Array, select: Callable) 
 	var entry = _dialogueEntry.instantiate()
 	_dialogueEntriesContaier.add_child(entry)
 	
-	var enabled_indices: Array[int] = []
 	for i in range(options.size()):
 		if options[i]["enabled"]:
-			enabled_indices.append(i)
-			#print("  [" + str(enabled_indices.size()) + "] " + options[i]["text"])
 			var option = _dialogueOption.instantiate()
+			_fade_in(option)
 			entry.get_child(0).get_child(1).add_child(option)
-			option.get_child(0).get_child(0).text = str(enabled_indices.size())
+			option.get_child(0).get_child(0).text = str(i+1)
 			option.get_child(0).get_child(1).text = options[i]["text"]
 	
 	# In a real project, wait for player input here.
@@ -93,17 +94,32 @@ signal DIALOGUEENDED
 func Next(text : String) -> void:
 	var entry = _dialogueEntry.instantiate()
 	_dialogueEntriesContaier.add_child(entry)
-	
-	entry.SetContent( GetSpeakerResource("speakerTest"), text)
+	_fade_in(entry)
+	entry.SetContent(GetSpeakerResource(text.substr(0, text.find(":"))),
+					 text.right(text.length()- text.find(":")))
 
 
 func GetSpeakerResource(speakerName : String) -> Speaker:
 	var speakerPath = "%s%s.tres" % [SPEAKERFOLDER, speakerName]
 	if ResourceLoader.exists(speakerPath):
 		return load(speakerPath)
-	return Speaker.new()
+	var newSpeaker = Speaker.new()
+	newSpeaker.name = speakerName
+	return newSpeaker
+
+#region FUNCTIONALITY
 
 func _onScrollBarChanged() -> void:
 	var scrollValue = _scrollBar.max_value
 	if scrollValue != _scrollContainer.scroll_vertical:
 		_scrollContainer.scroll_vertical = scrollValue
+
+func _fade_in(node: Control) -> void:
+	node.modulate.a = 0
+	var tween := create_tween()
+	tween.set_ease(Tween.EASE_OUT)
+	tween.set_trans(Tween.TRANS_CUBIC)
+	tween.tween_property(node, "modulate:a", 1.0, 0.5)
+
+#
+#endregion

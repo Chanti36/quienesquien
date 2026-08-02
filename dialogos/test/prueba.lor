@@ -1,0 +1,17 @@
+import personajes
+
+
+NARRADOR: A dormir va el sol y, con él, despierta la noche. Baltasar entra en la plaza, desierta a estas horas, con paso presto. A la altura de la vista, unas cuantas ventanas muestran la lánguida luz de débiles velas, que mantienen la oscuridad a raya en los bastiones que los vecinos llaman sus casas. En esta plaza, que por tamaño no ganaría renombre, dos brillantes ojos acechan a Baltasar desde la oscuridad de los portones de la plaza. La cara del hidalgo Miguel se revela ante la luz de la noche y su cuerpo se lanza en paso presto hacia ti.
+MIGUEL: ¡Excelentísimo señor Baltasar!
+NARRADOR: El adusto hombre muestra sus deshechos dientes. Podrías confundirlo con un ogro de los cuentos para niños.
+
+choice
+ Miguel, debe saber que le detesto.
+  NARRADOR: No, no dirás eso. [SIGUE EN: Línea del narrador en la   opción 3]
+ ¡Mi queridísimo señor Miguel! ¿Qué se le ofrece a estas horas de la noche?
+  NARRADOR: Miguel recoge la pelota. El juego ha comenzado.
+ Buena noche, Miguel. ¿Necesita algo?
+  NARRADOR: No dejes que te afecte, bien sabes cómo manejar a un embustero.
+
+MIGUEL: Solo pasaba a saludar ¡Hace tan buena noche que es capaz de sacar a dos perros de raza de su casa!
+

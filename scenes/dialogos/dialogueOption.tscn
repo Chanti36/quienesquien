@@ -13,6 +13,7 @@ layout_mode = 2
 text = "1."
 
 [node name="Button" type="Button" parent="HBoxContainer" unique_id=2081303739]
+custom_minimum_size = Vector2(500, 0)
 layout_mode = 2
 theme_override_colors/font_pressed_color = Color(0.8393537, 0, 0.13169888, 1)
 theme_override_colors/font_hover_color = Color(0.60932994, 0.60933006, 0.6093311, 1)
@@ -21,3 +22,6 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_b52nb")
 theme_override_styles/hover = SubResource("StyleBoxFlat_b52nb")
 theme_override_styles/focus = SubResource("StyleBoxFlat_b52nb")
 text = "Option 1"
+alignment = 0
+autowrap_mode = 3
+autowrap_trim_flags = 0

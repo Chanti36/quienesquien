@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Speaker" format=3 uid="uid://c6oeiwb78xj5i"]
+
+[ext_resource type="Script" uid="uid://chybjwj2xnwa6" path="res://scripts/dialogo/speaker.gd" id="1_1p3cv"]
+
+[resource]
+script = ExtResource("1_1p3cv")
+name = "BALTASAR"
+color = Color(2.0455568e-06, 0.57303315, 0.009832535, 1)
+metadata/_custom_type_script = "uid://chybjwj2xnwa6"

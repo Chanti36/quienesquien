@@ -1,0 +1,12 @@
+character NARRADOR
+  name:NARRADOR
+  color:gold
+
+character BALTASAR
+  name:BALTASAR
+  color:red
+
+character MIGUEL
+  name:MIGUEL
+  color:blue
+

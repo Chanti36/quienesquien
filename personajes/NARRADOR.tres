@@ -5,4 +5,5 @@
 [resource]
 script = ExtResource("1_u3x2q")
 name = "NARRADOR"
+color = Color(0.7257334, 0.50403607, 0.12517723, 1)
 metadata/_custom_type_script = "uid://chybjwj2xnwa6"
