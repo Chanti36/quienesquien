@@ -4,7 +4,8 @@ var b_ontransition := false
 var f_timer := 0.0
 
 func _ready() -> void:
-	DoTransition()
+	#DoTransition()
+	pass
 
 func _process(delta: float) -> void:
 	if !b_ontransition:

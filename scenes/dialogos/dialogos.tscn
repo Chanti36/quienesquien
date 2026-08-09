@@ -172,3 +172,4 @@ texture = ExtResource("5_j4bdb")
 
 [connection signal="mouse_entered" from="DialogueBg" to="." method="_mouse_over_dialogue_box"]
 [connection signal="mouse_exited" from="DialogueBg" to="." method="_mouse_exit_dialogue_box"]
+[connection signal="DIALOGUEENDED" from="DialogueDrawer" to="." method="_on_dialogue_drawer_END"]

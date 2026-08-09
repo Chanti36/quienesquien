@@ -1,6 +1,11 @@
 extends Control
 
 
+
+
+func SetUp()->void:
+	pass
+
 func _ready() -> void:
 	pass
 

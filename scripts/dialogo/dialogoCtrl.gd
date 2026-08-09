@@ -22,3 +22,10 @@ func _mouse_over_dialogue_box() -> void:
 
 func _mouse_exit_dialogue_box() -> void:
 	b_overSafeArea = false
+
+
+
+func _on_dialogue_drawer_END() -> void:
+	DIALOGUEEND.emit()
+
+signal DIALOGUEEND

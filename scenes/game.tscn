@@ -1,14 +1,48 @@
 [gd_scene format=3 uid="uid://c1ktye6ngr3vj"]
 
 [ext_resource type="PackedScene" uid="uid://2off632pfkyf" path="res://scenes/dialogos/dialogos.tscn" id="1_lnu2h"]
+[ext_resource type="Script" uid="uid://bq8swhv80ywjs" path="res://scripts/gameCtrl.gd" id="1_u5sy4"]
 [ext_resource type="PackedScene" uid="uid://g3yo2xy2tg3s" path="res://scenes/jueguete/juguete.tscn" id="2_lbhrr"]
 [ext_resource type="PackedScene" uid="uid://cfkgeir0lbm7k" path="res://scenes/mapa/mapa.tscn" id="3_iywne"]
 [ext_resource type="Script" uid="uid://dpesecpnr5k4o" path="res://scripts/transitionCtrl.gd" id="4_iywne"]
 [ext_resource type="Shader" uid="uid://bews7vtrahy6e" path="res://misc/shaders/transicion.gdshader" id="4_lbhrr"]
+[ext_resource type="FontFile" uid="uid://7m7j0oq00v6y" path="res://misc/IbarraRealNova-VariableFont_wght.ttf" id="4_p57ef"]
+[ext_resource type="Script" uid="uid://dwa4yxuekamyl" path="res://scripts/saveDataCtrl.gd" id="8_gee14"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_u5sy4"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gee14"]
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_u5sy4"]
+color = Color(1, 1, 1, 1)
+thickness = 8
+vertical = true
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0tnpc"]
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_gee14"]
+color = Color(0.9137255, 0, 0, 1)
+thickness = 8
+vertical = true
+
+[sub_resource type="Theme" id="Theme_iywne"]
+default_font = ExtResource("4_p57ef")
+Button/colors/font_color = Color(0.69135624, 0.6913571, 0.6913565, 1)
+Button/colors/font_disabled_color = Color(0.27, 0.27, 0.27, 0.62352943)
+Button/colors/font_focus_color = Color(0.95, 0.95, 0.95, 1)
+Button/colors/font_hover_pressed_color = Color(0.9137255, 0, 0, 1)
+Button/colors/font_pressed_color = Color(0.91227055, 4.7168137e-06, 6.738305e-07, 1)
+Button/font_sizes/font_size = 50
+Button/fonts/font = ExtResource("4_p57ef")
+Button/styles/disabled = SubResource("StyleBoxEmpty_u5sy4")
+Button/styles/focus = SubResource("StyleBoxEmpty_gee14")
+Button/styles/hover = SubResource("StyleBoxLine_u5sy4")
+Button/styles/normal = SubResource("StyleBoxEmpty_0tnpc")
+Button/styles/pressed = SubResource("StyleBoxLine_gee14")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_lbhrr"]
 shader = ExtResource("4_lbhrr")
-shader_parameter/progress = 0.28
+shader_parameter/progress = 0.0
 shader_parameter/speed = 0.1
 shader_parameter/pixelation = Vector2(1, 1)
 shader_parameter/zoom = 2.0
@@ -29,12 +63,105 @@ shader_parameter/color = Color(0, 0, 0, 1)
 shader_parameter/seed = 0.0
 
 [node name="Game" type="Node" unique_id=263974649]
+script = ExtResource("1_u5sy4")
 
 [node name="Dialogue" parent="." unique_id=1630039718 instance=ExtResource("1_lnu2h")]
 
 [node name="Juguete" parent="." unique_id=1374627053 instance=ExtResource("2_lbhrr")]
 
 [node name="Mapa" parent="." unique_id=978579870 instance=ExtResource("3_iywne")]
+
+[node name="MainMenu" type="Control" parent="." unique_id=802062527]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_iywne")
+
+[node name="Fondo" type="ColorRect" parent="MainMenu" unique_id=1497312572]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="MarginButtons" type="MarginContainer" parent="MainMenu" unique_id=1063465743]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 440.0
+grow_vertical = 2
+theme_override_constants/margin_left = 88
+theme_override_constants/margin_top = 566
+theme_override_constants/margin_right = 0
+theme_override_constants/margin_bottom = 180
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MainMenu/MarginButtons" unique_id=602013772]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Button_NuevaPartida" type="Button" parent="MainMenu/MarginButtons/VBoxContainer" unique_id=2115491505]
+layout_mode = 2
+text = " Nueva Partida"
+alignment = 0
+
+[node name="Button_Continuar" type="Button" parent="MainMenu/MarginButtons/VBoxContainer" unique_id=53995679]
+layout_mode = 2
+text = " Continuar"
+alignment = 0
+
+[node name="Button_Salir" type="Button" parent="MainMenu/MarginButtons/VBoxContainer" unique_id=1339501922]
+layout_mode = 2
+text = " Salir"
+alignment = 0
+
+[node name="MarginCredits" type="MarginContainer" parent="MainMenu" unique_id=128346915]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -595.0
+offset_top = -41.0
+grow_horizontal = 0
+grow_vertical = 0
+mouse_filter = 2
+theme_override_constants/margin_right = 36
+theme_override_constants/margin_bottom = 36
+
+[node name="Creditos" type="Label" parent="MainMenu/MarginCredits" unique_id=1907811616]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.72, 0.1368, 0.1368, 1)
+theme_override_font_sizes/font_size = 32
+text = "Un videojuego de
+Colectivo Artístico Anehlo"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MarginName" type="MarginContainer" parent="MainMenu" unique_id=610265879]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 783
+theme_override_constants/margin_top = 46
+theme_override_constants/margin_right = 36
+theme_override_constants/margin_bottom = 669
+
+[node name="Nombre" type="Label" parent="MainMenu/MarginName" unique_id=924008319]
+layout_mode = 2
+theme_override_font_sizes/font_size = 109
+text = "Los niños de Alboleta"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Transition" type="Control" parent="." unique_id=2128301663]
 layout_mode = 3
@@ -43,6 +170,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 script = ExtResource("4_iywne")
 
 [node name="Color" type="ColorRect" parent="Transition" unique_id=1533980052]
@@ -53,6 +181,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 
 [node name="Black" type="ColorRect" parent="Transition" unique_id=1649002520]
 material = SubResource("ShaderMaterial_lnu2h")
@@ -62,3 +191,12 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
+
+[node name="SaveData" type="Node" parent="." unique_id=1338869820]
+script = ExtResource("8_gee14")
+
+[connection signal="DIALOGUEEND" from="Dialogue" to="." method="_on_dialogue_end"]
+[connection signal="button_up" from="MainMenu/MarginButtons/VBoxContainer/Button_NuevaPartida" to="." method="_on_nueva_partida_button_up"]
+[connection signal="button_up" from="MainMenu/MarginButtons/VBoxContainer/Button_Continuar" to="." method="_on_continuar_button_up"]
+[connection signal="button_up" from="MainMenu/MarginButtons/VBoxContainer/Button_Salir" to="." method="_on_salir_button_up"]
