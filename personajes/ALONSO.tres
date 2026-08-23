@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Speaker" format=3 uid="uid://52bf287sux2k"]
+
+[ext_resource type="Script" uid="uid://chybjwj2xnwa6" path="res://scripts/dialogo/speaker.gd" id="1_4meil"]
+[ext_resource type="Texture2D" uid="uid://c7tfua0ildk74" path="res://sprites/Personajes/Alonso.png" id="2_ofr0w"]
+
+[resource]
+script = ExtResource("1_4meil")
+name = "ALONSO"
+color = Color(0.3604475, 0.7195453, 0.99999994, 1)
+sprite = ExtResource("2_ofr0w")
+metadata/_custom_type_script = "uid://chybjwj2xnwa6"

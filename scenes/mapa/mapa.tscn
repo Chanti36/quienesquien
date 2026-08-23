@@ -1,8 +1,17 @@
 [gd_scene format=3 uid="uid://cfkgeir0lbm7k"]
 
 [ext_resource type="Script" uid="uid://dexp7nfyvmed6" path="res://scripts/mapa/mapaCtrl.gd" id="1_p106v"]
-[ext_resource type="Texture2D" uid="uid://b6eu6ed4sbcxl" path="res://sprites/test/escenario_plaza.png" id="1_v373u"]
+[ext_resource type="Texture2D" uid="uid://b13mt6fm21jpd" path="res://sprites/Escenarios/mapa_capa4.png" id="2_d1dw7"]
+[ext_resource type="Script" uid="uid://dnvybfh0iusn5" path="res://scripts/mapa/paralaxMap.gd" id="2_ml2m4"]
 [ext_resource type="Texture2D" uid="uid://dprs1jlagb1v" path="res://icon.svg" id="2_p106v"]
+[ext_resource type="Texture2D" uid="uid://qs1lbtdd2fco" path="res://sprites/Escenarios/mapa_capa3.png" id="3_ml2m4"]
+[ext_resource type="Texture2D" uid="uid://bku68ugqyl0b7" path="res://sprites/Escenarios/mapa_capa2.png" id="4_crek2"]
+[ext_resource type="Texture2D" uid="uid://ctn2qrefuebct" path="res://sprites/Escenarios/mapa_capa1.png" id="5_vt6gj"]
+
+[sub_resource type="Gradient" id="Gradient_ml2m4"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_ml2m4"]
+gradient = SubResource("Gradient_ml2m4")
 
 [node name="Mapa" type="Control" unique_id=978579870]
 layout_mode = 3
@@ -13,19 +22,179 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_p106v")
 
-[node name="TextureRect" type="TextureRect" parent="." unique_id=1896004552]
+[node name="Paralax" type="Control" parent="." unique_id=1580899930]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("2_ml2m4")
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="Paralax" unique_id=1246518948]
+
+[node name="ParallaxLayer4" type="ParallaxLayer" parent="Paralax/ParallaxBackground" unique_id=714833764]
+
+[node name="Control" type="Control" parent="Paralax/ParallaxBackground/ParallaxLayer4" unique_id=1347530520]
+custom_minimum_size = Vector2(1920, 1080)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="capa4" type="TextureRect" parent="Paralax/ParallaxBackground/ParallaxLayer4/Control" unique_id=602166792]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -54.0
+offset_top = -31.0
+offset_right = -54.0
+offset_bottom = -31.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_v373u")
+scale = Vector2(1.105, 1.105)
+texture = ExtResource("2_d1dw7")
 
-[node name="TextureButton" type="TextureButton" parent="." unique_id=1694046600]
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="Paralax/ParallaxBackground" unique_id=1071263843]
+
+[node name="Control" type="Control" parent="Paralax/ParallaxBackground/ParallaxLayer3" unique_id=2024965795]
+custom_minimum_size = Vector2(1920, 1080)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="capa3" type="TextureRect" parent="Paralax/ParallaxBackground/ParallaxLayer3/Control" unique_id=1896004552]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -1014.0
+offset_top = -368.0
+offset_right = 906.0
+offset_bottom = 504.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.105, 1.105)
+texture = ExtResource("3_ml2m4")
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="Paralax/ParallaxBackground" unique_id=1260383721]
+
+[node name="Control" type="Control" parent="Paralax/ParallaxBackground/ParallaxLayer2" unique_id=337119772]
+custom_minimum_size = Vector2(1920, 1080)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="capa2" type="TextureRect" parent="Paralax/ParallaxBackground/ParallaxLayer2/Control" unique_id=483257572]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -1014.0
+offset_top = -77.0
+offset_right = 906.0
+offset_bottom = 518.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.105, 1.105)
+texture = ExtResource("4_crek2")
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="Paralax/ParallaxBackground" unique_id=1326530316]
+
+[node name="Control" type="Control" parent="Paralax/ParallaxBackground/ParallaxLayer" unique_id=1080149452]
+custom_minimum_size = Vector2(1920, 1080)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="capa1" type="TextureRect" parent="Paralax/ParallaxBackground/ParallaxLayer/Control" unique_id=2006649209]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -1014.0
+offset_top = -317.0
+offset_right = 906.0
+offset_bottom = 516.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.105, 1.105)
+texture = ExtResource("5_vt6gj")
+
+[node name="Bosque" type="TextureButton" parent="." unique_id=1694046600]
 layout_mode = 0
-offset_left = 625.0
+offset_left = 274.0
+offset_top = 223.0
+offset_right = 402.0
+offset_bottom = 351.0
+texture_normal = ExtResource("2_p106v")
+texture_pressed = SubResource("GradientTexture2D_ml2m4")
+
+[node name="Venta" type="TextureButton" parent="." unique_id=1774999141]
+layout_mode = 0
+offset_left = 1688.0
+offset_top = 692.0
+offset_right = 1816.0
+offset_bottom = 820.0
+texture_normal = ExtResource("2_p106v")
+texture_pressed = SubResource("GradientTexture2D_ml2m4")
+
+[node name="Cruce de caminos" type="TextureButton" parent="." unique_id=696815331]
+layout_mode = 0
+offset_left = 1193.0
+offset_top = 820.0
+offset_right = 1321.0
+offset_bottom = 948.0
+texture_normal = ExtResource("2_p106v")
+texture_pressed = SubResource("GradientTexture2D_ml2m4")
+
+[node name="Sima" type="TextureButton" parent="." unique_id=1623313945]
+layout_mode = 0
+offset_left = 1578.0
+offset_top = 114.0
+offset_right = 1706.0
+offset_bottom = 242.0
+texture_normal = ExtResource("2_p106v")
+texture_pressed = SubResource("GradientTexture2D_ml2m4")
+
+[node name="Iglesia" type="TextureButton" parent="." unique_id=331093374]
+layout_mode = 0
+offset_left = 1321.0
 offset_top = 235.0
-offset_right = 753.0
+offset_right = 1449.0
 offset_bottom = 363.0
 texture_normal = ExtResource("2_p106v")
+texture_pressed = SubResource("GradientTexture2D_ml2m4")
+
+[node name="Plaza" type="TextureButton" parent="." unique_id=1685951311]
+layout_mode = 0
+offset_left = 1193.0
+offset_top = 363.0
+offset_right = 1321.0
+offset_bottom = 491.0
+texture_normal = ExtResource("2_p106v")
+texture_pressed = SubResource("GradientTexture2D_ml2m4")
+
+[node name="Palacio" type="TextureButton" parent="." unique_id=1950620794]
+layout_mode = 0
+offset_left = 901.0
+offset_top = 363.0
+offset_right = 1029.0
+offset_bottom = 491.0
+texture_normal = ExtResource("2_p106v")
+texture_pressed = SubResource("GradientTexture2D_ml2m4")
+
+[connection signal="button_up" from="Bosque" to="." method="_on_Bosque"]
+[connection signal="button_up" from="Venta" to="." method="_on_Venta"]
+[connection signal="button_up" from="Cruce de caminos" to="." method="_on_Cruce_de_caminos"]
+[connection signal="button_up" from="Sima" to="." method="_on_Sima"]
+[connection signal="button_up" from="Iglesia" to="." method="_on_Iglesia"]
+[connection signal="button_up" from="Plaza" to="." method="_on_Plaza"]
+[connection signal="button_up" from="Palacio" to="." method="_on_Palacio"]

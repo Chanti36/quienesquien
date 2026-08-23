@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Speaker" format=3 uid="uid://tht4g3agyoyw"]
+
+[ext_resource type="Script" uid="uid://chybjwj2xnwa6" path="res://scripts/dialogo/speaker.gd" id="1_cqwar"]
+[ext_resource type="Texture2D" uid="uid://brdp8pgtgrxm1" path="res://sprites/Personajes/Elena.png" id="2_dwj8f"]
+
+[resource]
+script = ExtResource("1_cqwar")
+name = "ELENA"
+sprite = ExtResource("2_dwj8f")
+metadata/_custom_type_script = "uid://chybjwj2xnwa6"

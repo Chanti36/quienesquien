@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Speaker" format=3 uid="uid://dy6ygi20d11hn"]
+
+[ext_resource type="Script" uid="uid://chybjwj2xnwa6" path="res://scripts/dialogo/speaker.gd" id="1_agpjv"]
+[ext_resource type="Texture2D" uid="uid://dq882hxgsbqr2" path="res://sprites/Personajes/Enemesio.png" id="2_qyycs"]
+
+[resource]
+script = ExtResource("1_agpjv")
+name = "ENEMESIO"
+sprite = ExtResource("2_qyycs")
+metadata/_custom_type_script = "uid://chybjwj2xnwa6"

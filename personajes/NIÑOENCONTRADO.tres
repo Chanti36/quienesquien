@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Speaker" format=3 uid="uid://q21degr0380h"]
+
+[ext_resource type="Script" uid="uid://chybjwj2xnwa6" path="res://scripts/dialogo/speaker.gd" id="1_1pti3"]
+[ext_resource type="Texture2D" uid="uid://cuhgw2cufyi5v" path="res://sprites/Personajes/Niño-encontrado.png" id="2_8ns0y"]
+
+[resource]
+script = ExtResource("1_1pti3")
+name = "NIÑO ENCONTRADO"
+sprite = ExtResource("2_8ns0y")
+metadata/_custom_type_script = "uid://chybjwj2xnwa6"

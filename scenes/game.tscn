@@ -1,13 +1,131 @@
 [gd_scene format=3 uid="uid://c1ktye6ngr3vj"]
 
-[ext_resource type="PackedScene" uid="uid://2off632pfkyf" path="res://scenes/dialogos/dialogos.tscn" id="1_lnu2h"]
 [ext_resource type="Script" uid="uid://bq8swhv80ywjs" path="res://scripts/gameCtrl.gd" id="1_u5sy4"]
 [ext_resource type="PackedScene" uid="uid://g3yo2xy2tg3s" path="res://scenes/jueguete/juguete.tscn" id="2_lbhrr"]
-[ext_resource type="PackedScene" uid="uid://cfkgeir0lbm7k" path="res://scenes/mapa/mapa.tscn" id="3_iywne"]
 [ext_resource type="Script" uid="uid://dpesecpnr5k4o" path="res://scripts/transitionCtrl.gd" id="4_iywne"]
 [ext_resource type="Shader" uid="uid://bews7vtrahy6e" path="res://misc/shaders/transicion.gdshader" id="4_lbhrr"]
 [ext_resource type="FontFile" uid="uid://7m7j0oq00v6y" path="res://misc/IbarraRealNova-VariableFont_wght.ttf" id="4_p57ef"]
+[ext_resource type="Script" uid="uid://dexp7nfyvmed6" path="res://scripts/mapa/mapaCtrl.gd" id="4_trtic"]
+[ext_resource type="Script" uid="uid://dnvybfh0iusn5" path="res://scripts/mapa/paralaxMap.gd" id="5_ir15t"]
+[ext_resource type="Texture2D" uid="uid://b13mt6fm21jpd" path="res://sprites/Escenarios/mapa_capa4.png" id="6_ca42v"]
+[ext_resource type="Texture2D" uid="uid://qs1lbtdd2fco" path="res://sprites/Escenarios/mapa_capa3.png" id="7_rysoc"]
 [ext_resource type="Script" uid="uid://dwa4yxuekamyl" path="res://scripts/saveDataCtrl.gd" id="8_gee14"]
+[ext_resource type="Texture2D" uid="uid://bku68ugqyl0b7" path="res://sprites/Escenarios/mapa_capa2.png" id="8_ssvqc"]
+[ext_resource type="Script" uid="uid://cd18wsstdapmq" path="res://scripts/dialogo/dialogoCtrl.gd" id="9_37s47"]
+[ext_resource type="Texture2D" uid="uid://ctn2qrefuebct" path="res://sprites/Escenarios/mapa_capa1.png" id="9_264po"]
+[ext_resource type="Texture2D" uid="uid://dprs1jlagb1v" path="res://icon.svg" id="10_1kice"]
+[ext_resource type="Script" uid="uid://dilkgkw31rvw6" path="res://scripts/dialogo/parallaxDialogue.gd" id="10_bt5mj"]
+[ext_resource type="Texture2D" uid="uid://b6eu6ed4sbcxl" path="res://sprites/test/escenario_plaza.png" id="11_e1j6l"]
+[ext_resource type="Texture2D" uid="uid://ci1c7ar64047y" path="res://sprites/test/char.png" id="12_pl11u"]
+[ext_resource type="Texture2D" uid="uid://ihoyjy5juhyk" path="res://sprites/test/cuadro_texto.png" id="13_bhx41"]
+[ext_resource type="Script" uid="uid://dnuw15skcqbub" path="res://scripts/dialogo/dialogueDrawer.gd" id="15_qnb83"]
+[ext_resource type="Script" uid="uid://dfs3mddq0kay5" path="res://scripts/dialogo/dialogueEntry.gd" id="16_sww3w"]
+[ext_resource type="Texture2D" uid="uid://brq3feimnaslo" path="res://sprites/test/degradado_texto.png" id="17_suyxu"]
+[ext_resource type="Texture2D" uid="uid://bl8ndlrr4i02k" path="res://sprites/test/ui_marco.png" id="18_sgl2t"]
+[ext_resource type="Texture2D" uid="uid://bebnk3obechvp" path="res://sprites/test/menuprincipal.jpg" id="20_bt5mj"]
+
+[sub_resource type="Gradient" id="Gradient_ml2m4"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_ml2m4"]
+gradient = SubResource("Gradient_ml2m4")
+
+[sub_resource type="Animation" id="Animation_e1j6l"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Char:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Char:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-1043, -2713)]
+}
+
+[sub_resource type="Animation" id="Animation_bt5mj"]
+resource_name = "fadeIn"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Char:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Char:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-593.18195, -2713.6365), Vector2(-1043, -2713)]
+}
+
+[sub_resource type="Animation" id="Animation_pl11u"]
+resource_name = "fadeOut"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Char:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-1043, -2713), Vector2(-1456.8184, -2713.6365)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Char:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_e1j6l"]
+_data = {
+&"RESET": SubResource("Animation_e1j6l"),
+&"fadeIn": SubResource("Animation_bt5mj"),
+&"fadeOut": SubResource("Animation_pl11u")
+}
+
+[sub_resource type="Theme" id="Theme_yljqp"]
+default_font_size = 16
+Button/font_sizes/font_size = 25
+Button/fonts/font = ExtResource("4_p57ef")
+RichTextLabel/colors/default_color = Color(0.70796657, 0.7079665, 0.7079665, 1)
+RichTextLabel/font_sizes/normal_font_size = 25
+RichTextLabel/fonts/normal_font = ExtResource("4_p57ef")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_m2pct"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_u5sy4"]
 
@@ -40,6 +158,107 @@ Button/styles/hover = SubResource("StyleBoxLine_u5sy4")
 Button/styles/normal = SubResource("StyleBoxEmpty_0tnpc")
 Button/styles/pressed = SubResource("StyleBoxLine_gee14")
 
+[sub_resource type="Animation" id="Animation_gee14"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:color:r")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(2, 2),
+"points": PackedFloat32Array(0, 0, 0, 0.00016666666, 0, 0, -0.00016666666, 0, 0, 0),
+"times": PackedFloat32Array(0, 0.0009999999)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:color:g")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(2, 2),
+"points": PackedFloat32Array(0, 0, 0, 0.00016666666, 0, 0, -0.00016666666, 0, 0, 0),
+"times": PackedFloat32Array(0, 0.0009999999)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:color:b")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(2, 2),
+"points": PackedFloat32Array(0, 0, 0, 0.00016666666, 0, 0, -0.00016666666, 0, 0, 0),
+"times": PackedFloat32Array(0, 0.0009999999)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:color:a")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(2, 2),
+"points": PackedFloat32Array(0, 0, 0, 0.00016666666, 0, 0, -0.00016666666, 0.16666667, 0, 0),
+"times": PackedFloat32Array(0, 0.0009999999)
+}
+
+[sub_resource type="Animation" id="Animation_0tnpc"]
+resource_name = "TransitionFade"
+length = 2.0
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:color:r")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0, 2),
+"points": PackedFloat32Array(0, -0.16666667, 0, 0, 0, 0, -0.25, 0, 0.25, 0, 0, -0.16666667, 0, 0, 0),
+"times": PackedFloat32Array(0, 1, 2)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:color:g")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0, 2),
+"points": PackedFloat32Array(0, -0.16666667, 0, 0, 0, 0, -0.25, 0, 0.25, 0, 0, -0.16666667, 0, 0, 0),
+"times": PackedFloat32Array(0, 1, 2)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:color:b")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0, 0, 2),
+"points": PackedFloat32Array(0, -0.16666667, 0, 0, 0, 0, -0.25, 0, 0.25, 0, 0, -0.16666667, 0, 0, 0),
+"times": PackedFloat32Array(0, 1, 2)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:color:a")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0, 0, 2),
+"points": PackedFloat32Array(0, -0.16666667, 0.16666667, 0, 0, 1, -0.96666664, -0.012774825, 0.70000005, -0.0068330765, 0, -0.6666666, 0.13161023, 0, 0),
+"times": PackedFloat32Array(0, 1, 2)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_vtaks"]
+_data = {
+&"RESET": SubResource("Animation_gee14"),
+&"TransitionFade": SubResource("Animation_0tnpc")
+}
+
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_lbhrr"]
 shader = ExtResource("4_lbhrr")
 shader_parameter/progress = 0.0
@@ -65,29 +284,365 @@ shader_parameter/seed = 0.0
 [node name="Game" type="Node" unique_id=263974649]
 script = ExtResource("1_u5sy4")
 
-[node name="Dialogue" parent="." unique_id=1630039718 instance=ExtResource("1_lnu2h")]
-
-[node name="Juguete" parent="." unique_id=1374627053 instance=ExtResource("2_lbhrr")]
-
-[node name="Mapa" parent="." unique_id=978579870 instance=ExtResource("3_iywne")]
-
-[node name="MainMenu" type="Control" parent="." unique_id=802062527]
+[node name="Mapa" type="Control" parent="." unique_id=978579870]
+visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("4_trtic")
+
+[node name="Paralax" type="Control" parent="Mapa" unique_id=1580899930]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("5_ir15t")
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="Mapa/Paralax" unique_id=1246518948]
+visible = false
+
+[node name="ParallaxLayer4" type="ParallaxLayer" parent="Mapa/Paralax/ParallaxBackground" unique_id=714833764]
+
+[node name="Control" type="Control" parent="Mapa/Paralax/ParallaxBackground/ParallaxLayer4" unique_id=1347530520]
+custom_minimum_size = Vector2(1920, 1080)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="capa4" type="TextureRect" parent="Mapa/Paralax/ParallaxBackground/ParallaxLayer4/Control" unique_id=602166792]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -54.0
+offset_top = -31.0
+offset_right = -54.0
+offset_bottom = -31.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.105, 1.105)
+texture = ExtResource("6_ca42v")
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="Mapa/Paralax/ParallaxBackground" unique_id=1071263843]
+
+[node name="Control" type="Control" parent="Mapa/Paralax/ParallaxBackground/ParallaxLayer3" unique_id=2024965795]
+custom_minimum_size = Vector2(1920, 1080)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="capa3" type="TextureRect" parent="Mapa/Paralax/ParallaxBackground/ParallaxLayer3/Control" unique_id=1896004552]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -1014.0
+offset_top = -368.0
+offset_right = 906.0
+offset_bottom = 504.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.105, 1.105)
+texture = ExtResource("7_rysoc")
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="Mapa/Paralax/ParallaxBackground" unique_id=1260383721]
+
+[node name="Control" type="Control" parent="Mapa/Paralax/ParallaxBackground/ParallaxLayer2" unique_id=337119772]
+custom_minimum_size = Vector2(1920, 1080)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="capa2" type="TextureRect" parent="Mapa/Paralax/ParallaxBackground/ParallaxLayer2/Control" unique_id=483257572]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -1014.0
+offset_top = -77.0
+offset_right = 906.0
+offset_bottom = 518.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.105, 1.105)
+texture = ExtResource("8_ssvqc")
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="Mapa/Paralax/ParallaxBackground" unique_id=1326530316]
+
+[node name="Control" type="Control" parent="Mapa/Paralax/ParallaxBackground/ParallaxLayer" unique_id=1080149452]
+custom_minimum_size = Vector2(1920, 1080)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="capa1" type="TextureRect" parent="Mapa/Paralax/ParallaxBackground/ParallaxLayer/Control" unique_id=2006649209]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -1014.0
+offset_top = -317.0
+offset_right = 906.0
+offset_bottom = 516.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.105, 1.105)
+texture = ExtResource("9_264po")
+
+[node name="Bosque" type="TextureButton" parent="Mapa" unique_id=1694046600]
+layout_mode = 0
+offset_left = 274.0
+offset_top = 223.0
+offset_right = 402.0
+offset_bottom = 351.0
+texture_normal = ExtResource("10_1kice")
+texture_pressed = SubResource("GradientTexture2D_ml2m4")
+
+[node name="Venta" type="TextureButton" parent="Mapa" unique_id=1774999141]
+layout_mode = 0
+offset_left = 1688.0
+offset_top = 692.0
+offset_right = 1816.0
+offset_bottom = 820.0
+texture_normal = ExtResource("10_1kice")
+texture_pressed = SubResource("GradientTexture2D_ml2m4")
+
+[node name="Cruce de caminos" type="TextureButton" parent="Mapa" unique_id=696815331]
+layout_mode = 0
+offset_left = 1193.0
+offset_top = 820.0
+offset_right = 1321.0
+offset_bottom = 948.0
+texture_normal = ExtResource("10_1kice")
+texture_pressed = SubResource("GradientTexture2D_ml2m4")
+
+[node name="Sima" type="TextureButton" parent="Mapa" unique_id=1623313945]
+layout_mode = 0
+offset_left = 1578.0
+offset_top = 114.0
+offset_right = 1706.0
+offset_bottom = 242.0
+texture_normal = ExtResource("10_1kice")
+texture_pressed = SubResource("GradientTexture2D_ml2m4")
+
+[node name="Iglesia" type="TextureButton" parent="Mapa" unique_id=331093374]
+layout_mode = 0
+offset_left = 1321.0
+offset_top = 235.0
+offset_right = 1449.0
+offset_bottom = 363.0
+texture_normal = ExtResource("10_1kice")
+texture_pressed = SubResource("GradientTexture2D_ml2m4")
+
+[node name="Plaza" type="TextureButton" parent="Mapa" unique_id=1685951311]
+layout_mode = 0
+offset_left = 1193.0
+offset_top = 363.0
+offset_right = 1321.0
+offset_bottom = 491.0
+texture_normal = ExtResource("10_1kice")
+texture_pressed = SubResource("GradientTexture2D_ml2m4")
+
+[node name="Palacio" type="TextureButton" parent="Mapa" unique_id=1950620794]
+layout_mode = 0
+offset_left = 901.0
+offset_top = 363.0
+offset_right = 1029.0
+offset_bottom = 491.0
+texture_normal = ExtResource("10_1kice")
+texture_pressed = SubResource("GradientTexture2D_ml2m4")
+
+[node name="Juguete" parent="." unique_id=1374627053 instance=ExtResource("2_lbhrr")]
+visible = false
+
+[node name="DialogueCtrl" type="Control" parent="." unique_id=1630039718]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("9_37s47")
+
+[node name="Parallax" type="Control" parent="DialogueCtrl" unique_id=732161371]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("10_bt5mj")
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="DialogueCtrl/Parallax" unique_id=30386127]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="DialogueCtrl/Parallax/ParallaxBackground" unique_id=1835679459]
+
+[node name="Control" type="Control" parent="DialogueCtrl/Parallax/ParallaxBackground/ParallaxLayer" unique_id=1458618273]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="Background" type="TextureRect" parent="DialogueCtrl/Parallax/ParallaxBackground/ParallaxLayer/Control" unique_id=2116317197]
+custom_minimum_size = Vector2(1920, 1080)
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("11_e1j6l")
+
+[node name="ParallaxChar" type="ParallaxBackground" parent="DialogueCtrl/Parallax" unique_id=1452795238]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="DialogueCtrl/Parallax/ParallaxChar" unique_id=880303096]
+
+[node name="PJChar" type="Control" parent="DialogueCtrl/Parallax/ParallaxChar/ParallaxLayer" unique_id=1168617682]
+layout_mode = 3
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 1208.0
+offset_top = 1080.0
+offset_right = 1208.0
+offset_bottom = 1080.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(0.43999997, 0.43999997)
+
+[node name="Char" type="TextureRect" parent="DialogueCtrl/Parallax/ParallaxChar/ParallaxLayer/PJChar" unique_id=837712290]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1043.0
+offset_top = -2713.0
+offset_right = 1043.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("12_pl11u")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="DialogueCtrl/Parallax/ParallaxChar/ParallaxLayer/PJChar" unique_id=522542901]
+libraries/ = SubResource("AnimationLibrary_e1j6l")
+
+[node name="DialogueBg" type="TextureRect" parent="DialogueCtrl" unique_id=1715875861]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 105.0
+offset_top = 46.0
+offset_right = -1183.0
+offset_bottom = -44.0
+mouse_filter = 0
+texture = ExtResource("13_bhx41")
+
+[node name="DialogueDrawer" type="MarginContainer" parent="DialogueCtrl" unique_id=115939764]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_left = 100.0
+offset_right = 735.0
+grow_vertical = 2
+theme = SubResource("Theme_yljqp")
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 45
+theme_override_constants/margin_right = 25
+theme_override_constants/margin_bottom = 106
+script = ExtResource("15_qnb83")
+
+[node name="PanelContainer" type="PanelContainer" parent="DialogueCtrl/DialogueDrawer" unique_id=234794570]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_m2pct")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="DialogueCtrl/DialogueDrawer/PanelContainer" unique_id=1389591844]
+layout_mode = 2
+theme_override_colors/scroll_hint_vertical_color = Color(0.44313726, 0.3254902, 0.19607843, 1)
+theme_override_colors/scroll_hint_horizontal_color = Color(0.70980394, 0.59607846, 0.37254903, 1)
+theme_override_constants/scrollbar_h_separation = 30
+
+[node name="DialogueEntries" type="VBoxContainer" parent="DialogueCtrl/DialogueDrawer/PanelContainer/ScrollContainer" unique_id=1742221018]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+alignment = 2
+
+[node name="DialogueEntry" type="MarginContainer" parent="DialogueCtrl/DialogueDrawer/PanelContainer/ScrollContainer/DialogueEntries" unique_id=71812865]
+layout_mode = 2
+script = ExtResource("16_sww3w")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="DialogueCtrl/DialogueDrawer/PanelContainer/ScrollContainer/DialogueEntries/DialogueEntry" unique_id=171339835]
+layout_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="DialogueCtrl/DialogueDrawer/PanelContainer/ScrollContainer/DialogueEntries/DialogueEntry/VBoxContainer" unique_id=929887069]
+layout_mode = 2
+bbcode_enabled = true
+text = "
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+"
+fit_content = true
+
+[node name="DialogueOver" type="TextureRect" parent="DialogueCtrl" unique_id=374720331]
+layout_mode = 0
+offset_left = 105.0
+offset_top = 46.0
+offset_right = 737.0
+offset_bottom = 1036.0
+mouse_filter = 2
+mouse_behavior_recursive = 1
+texture = ExtResource("17_suyxu")
+
+[node name="Marco" type="TextureRect" parent="DialogueCtrl" unique_id=624198283]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+mouse_behavior_recursive = 1
+texture = ExtResource("18_sgl2t")
+
+[node name="MainMenu" type="Control" parent="." unique_id=802062527]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
 theme = SubResource("Theme_iywne")
 
-[node name="Fondo" type="ColorRect" parent="MainMenu" unique_id=1497312572]
+[node name="Fondo" type="TextureRect" parent="MainMenu" unique_id=2053361503]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0, 0, 0, 1)
+texture = ExtResource("20_bt5mj")
 
 [node name="MarginButtons" type="MarginContainer" parent="MainMenu" unique_id=1063465743]
 layout_mode = 1
@@ -139,7 +694,7 @@ layout_mode = 2
 theme_override_colors/font_color = Color(0.72, 0.1368, 0.1368, 1)
 theme_override_font_sizes/font_size = 32
 text = "Un videojuego de
-Colectivo Artístico Anehlo"
+Colectivo Artístico Anhelo"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -159,11 +714,12 @@ theme_override_constants/margin_bottom = 669
 [node name="Nombre" type="Label" parent="MainMenu/MarginName" unique_id=924008319]
 layout_mode = 2
 theme_override_font_sizes/font_size = 109
-text = "Los niños de Alboleta"
+text = "Iberia Ignota, Alboleta"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Transition" type="Control" parent="." unique_id=2128301663]
+visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -172,6 +728,19 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("4_iywne")
+
+[node name="Fade" type="ColorRect" parent="Transition" unique_id=2021713842]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 0)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Transition/Fade" unique_id=1335822218]
+libraries/ = SubResource("AnimationLibrary_vtaks")
 
 [node name="Color" type="ColorRect" parent="Transition" unique_id=1533980052]
 material = SubResource("ShaderMaterial_lbhrr")
@@ -196,7 +765,17 @@ mouse_filter = 2
 [node name="SaveData" type="Node" parent="." unique_id=1338869820]
 script = ExtResource("8_gee14")
 
-[connection signal="DIALOGUEEND" from="Dialogue" to="." method="_on_dialogue_end"]
+[connection signal="button_up" from="Mapa/Bosque" to="Mapa" method="_on_Bosque"]
+[connection signal="button_up" from="Mapa/Venta" to="Mapa" method="_on_Venta"]
+[connection signal="button_up" from="Mapa/Cruce de caminos" to="Mapa" method="_on_Cruce_de_caminos"]
+[connection signal="button_up" from="Mapa/Sima" to="Mapa" method="_on_Sima"]
+[connection signal="button_up" from="Mapa/Iglesia" to="Mapa" method="_on_Iglesia"]
+[connection signal="button_up" from="Mapa/Plaza" to="Mapa" method="_on_Plaza"]
+[connection signal="button_up" from="Mapa/Palacio" to="Mapa" method="_on_Palacio"]
+[connection signal="DIALOGUEEND" from="DialogueCtrl" to="." method="_on_dialogue_end"]
+[connection signal="mouse_entered" from="DialogueCtrl/DialogueBg" to="DialogueCtrl/DialogueDrawer" method="_mouse_over_dialogue_box"]
+[connection signal="mouse_exited" from="DialogueCtrl/DialogueBg" to="DialogueCtrl/DialogueDrawer" method="_mouse_exit_dialogue_box"]
+[connection signal="DIALOGUEENDED" from="DialogueCtrl/DialogueDrawer" to="DialogueCtrl" method="_on_dialogue_drawer_END"]
 [connection signal="button_up" from="MainMenu/MarginButtons/VBoxContainer/Button_NuevaPartida" to="." method="_on_nueva_partida_button_up"]
 [connection signal="button_up" from="MainMenu/MarginButtons/VBoxContainer/Button_Continuar" to="." method="_on_continuar_button_up"]
 [connection signal="button_up" from="MainMenu/MarginButtons/VBoxContainer/Button_Salir" to="." method="_on_salir_button_up"]

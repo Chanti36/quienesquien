@@ -15,6 +15,8 @@ var loreline: Loreline = Loreline.shared()
 
 var b_dialogueShown := false
 
+var b_overSafeArea := false
+
 ## CUESTIONES
 #
 ## Avanza automático o con click
@@ -28,7 +30,7 @@ func _ready() -> void:
 	_scrollBar.changed.connect(_onScrollBarChanged)
 	
 	await get_tree().create_timer(1.0).timeout
-	Start("test/prueba")
+	#Start("test/prueba")
 
 
 func Start(dialogueName : String) -> void:
@@ -43,27 +45,45 @@ func Start(dialogueName : String) -> void:
 
 
 
-#region LORELINE
 
-func _on_dialogue(interp: LorelineInterpreter, character: String, text: String, tags: Array, advance: Callable) -> void:
+signal INPUT
+func _input(_event: InputEvent) -> void:
+	if Input.is_action_just_released("dialogic_default_action"):
+		if !b_overSafeArea:
+			INPUT.emit()
+
+func _mouse_over_dialogue_box() -> void:
+	b_overSafeArea = true
+	print("111111111111111111111-> enter")
+
+func _mouse_exit_dialogue_box() -> void:
+	b_overSafeArea = false
+	print("2222222222222222222-> exit")
+
+#TODO NO FUNCIONA +AÑADIR SPRITE PERSONAJES CUANDO TOCA
+
+#region LORELINE
+func _on_dialogue(interp: LorelineInterpreter, character: String, text: String, _tags: Array, advance: Callable) -> void:
 	if !b_dialogueShown:
 		if character != "":
+			print("3333333333333333333333333333333 ", character)
 			var display_name: String = interp.get_character_field(character, "name")
+
 			if display_name != "":
 				character = display_name
 			else:
 				push_error("no display name for character: " + character)
-			Next(character + ": " + text)
+			Next(character + ": " + text, true)
 		else:
-			push_error("no character name on: " + text)
-			Next(text)
+			push_warning("no character name on: " + text)
+			Next(text, false)
 		b_dialogueShown = true
 	
-	while not Input.is_action_just_pressed("ui_accept"):
-		await get_tree().process_frame
-		
-	advance.call()
+	#if not Input.is_action_just_pressed("ui_accept"):
+		#await  get_tree().process_frame
+	await INPUT
 	b_dialogueShown = false
+	advance.call()
 
 
 func _on_choice(_interp: LorelineInterpreter, options: Array, select: Callable) -> void:
@@ -77,26 +97,39 @@ func _on_choice(_interp: LorelineInterpreter, options: Array, select: Callable) 
 			entry.get_child(0).get_child(1).add_child(option)
 			option.get_child(0).get_child(0).text = str(i+1)
 			option.get_child(0).get_child(1).text = options[i]["text"]
-	
-	# In a real project, wait for player input here.
-	# For this example, automatically select the first enabled choice:
-	#select.call(enabled_indices[0])
+			option.get_child(0).get_child(1).button_up.connect(SelectChoice.bind(i, entry, select))
 
 
-func _on_finished(_interp: LorelineInterpreter) -> void:
+func _on_finished(_interp: LorelineInterpreter)->float:
 	print("--- The End ---")
 	DIALOGUEENDED.emit()
-
+	for i in _dialogueEntriesContaier.get_children():
+		_dialogueEntriesContaier.remove_child(i)
+	return .1
 signal DIALOGUEENDED
 
 #endregion
 
-func Next(text : String) -> void:
+
+func SelectChoice(index: int, entry: MarginContainer, select: Callable) -> void:
+	for i in entry.get_child(0).get_child(1).get_child_count():
+		if index != i:
+			#entry.get_child(0).get_child(1).get_child(i).disabled = true
+			entry.get_child(0).get_child(1).get_child(i).queue_free()
+		else:
+			entry.get_child(0).get_child(1).get_child(i).get_child(0).get_child(1).disabled = true
+	select.call(index)
+
+
+func Next(text : String, charName : bool) -> void:
 	var entry = _dialogueEntry.instantiate()
 	_dialogueEntriesContaier.add_child(entry)
 	_fade_in(entry)
-	entry.SetContent(GetSpeakerResource(text.substr(0, text.find(":"))),
-					 text.right(text.length()- text.find(":")))
+	if charName:
+		entry.SetContent(text.right(text.length()- text.find(":")),
+						 GetSpeakerResource(text.substr(0, text.find(":"))))
+	else:
+		entry.SetContent(text)
 
 
 func GetSpeakerResource(speakerName : String) -> Speaker:
@@ -106,6 +139,8 @@ func GetSpeakerResource(speakerName : String) -> Speaker:
 	var newSpeaker = Speaker.new()
 	newSpeaker.name = speakerName
 	return newSpeaker
+
+
 
 #region FUNCTIONALITY
 

@@ -1,0 +1,127 @@
+[gd_scene format=3 uid="uid://pdwy3211wi7l"]
+
+[ext_resource type="Script" uid="uid://cd18wsstdapmq" path="res://scripts/dialogo/dialogoCtrl.gd" id="1_c16hk"]
+[ext_resource type="Texture2D" uid="uid://bbyu5scq6taww" path="res://sprites/Escenas/escena_inicio_2.png" id="2_cnkx6"]
+[ext_resource type="Texture2D" uid="uid://ihoyjy5juhyk" path="res://sprites/test/cuadro_texto.png" id="5_ukisq"]
+[ext_resource type="FontFile" uid="uid://7m7j0oq00v6y" path="res://misc/IbarraRealNova-VariableFont_wght.ttf" id="6_slgpo"]
+[ext_resource type="Script" uid="uid://dnuw15skcqbub" path="res://scripts/dialogo/dialogueDrawer.gd" id="7_vj5k0"]
+[ext_resource type="Script" uid="uid://dfs3mddq0kay5" path="res://scripts/dialogo/dialogueEntry.gd" id="8_1y74p"]
+[ext_resource type="Texture2D" uid="uid://brq3feimnaslo" path="res://sprites/test/degradado_texto.png" id="9_vuaw1"]
+[ext_resource type="Texture2D" uid="uid://bl8ndlrr4i02k" path="res://sprites/test/ui_marco.png" id="10_xruc8"]
+
+[sub_resource type="Theme" id="Theme_yljqp"]
+default_font_size = 16
+Button/font_sizes/font_size = 25
+Button/fonts/font = ExtResource("6_slgpo")
+RichTextLabel/colors/default_color = Color(0.70796657, 0.7079665, 0.7079665, 1)
+RichTextLabel/font_sizes/normal_font_size = 25
+RichTextLabel/fonts/normal_font = ExtResource("6_slgpo")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_m2pct"]
+
+[node name="DialogueCtrl" type="Control" unique_id=1630039718]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_c16hk")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1553081160]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_cnkx6")
+
+[node name="DialogueBg" type="TextureRect" parent="." unique_id=1715875861]
+layout_mode = 0
+offset_left = 105.0
+offset_top = 46.0
+offset_right = 737.0
+offset_bottom = 1036.0
+texture = ExtResource("5_ukisq")
+
+[node name="DialogueDrawer" type="MarginContainer" parent="." unique_id=115939764]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_left = 100.0
+offset_right = 735.0
+grow_vertical = 2
+theme = SubResource("Theme_yljqp")
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 45
+theme_override_constants/margin_right = 25
+theme_override_constants/margin_bottom = 106
+script = ExtResource("7_vj5k0")
+
+[node name="PanelContainer" type="PanelContainer" parent="DialogueDrawer" unique_id=234794570]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_m2pct")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="DialogueDrawer/PanelContainer" unique_id=1389591844]
+layout_mode = 2
+theme_override_colors/scroll_hint_vertical_color = Color(0.44313726, 0.3254902, 0.19607843, 1)
+theme_override_colors/scroll_hint_horizontal_color = Color(0.70980394, 0.59607846, 0.37254903, 1)
+theme_override_constants/scrollbar_h_separation = 30
+
+[node name="DialogueEntries" type="VBoxContainer" parent="DialogueDrawer/PanelContainer/ScrollContainer" unique_id=1742221018]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+alignment = 2
+
+[node name="DialogueEntry" type="MarginContainer" parent="DialogueDrawer/PanelContainer/ScrollContainer/DialogueEntries" unique_id=71812865]
+layout_mode = 2
+script = ExtResource("8_1y74p")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="DialogueDrawer/PanelContainer/ScrollContainer/DialogueEntries/DialogueEntry" unique_id=171339835]
+layout_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="DialogueDrawer/PanelContainer/ScrollContainer/DialogueEntries/DialogueEntry/VBoxContainer" unique_id=929887069]
+layout_mode = 2
+bbcode_enabled = true
+text = "
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+"
+fit_content = true
+
+[node name="DialogueOver" type="TextureRect" parent="." unique_id=374720331]
+layout_mode = 0
+offset_left = 105.0
+offset_top = 46.0
+offset_right = 737.0
+offset_bottom = 1036.0
+mouse_filter = 2
+mouse_behavior_recursive = 1
+texture = ExtResource("9_vuaw1")
+
+[node name="Marco" type="TextureRect" parent="." unique_id=624198283]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+mouse_behavior_recursive = 1
+texture = ExtResource("10_xruc8")
+
+[connection signal="mouse_entered" from="DialogueBg" to="." method="_mouse_over_dialogue_box"]
+[connection signal="mouse_exited" from="DialogueBg" to="." method="_mouse_exit_dialogue_box"]
+[connection signal="DIALOGUEENDED" from="DialogueDrawer" to="." method="_on_dialogue_drawer_END"]

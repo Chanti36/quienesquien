@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Speaker" format=3 uid="uid://d2to7k0suav8q"]
+
+[ext_resource type="Script" uid="uid://chybjwj2xnwa6" path="res://scripts/dialogo/speaker.gd" id="1_8jnmr"]
+[ext_resource type="Texture2D" uid="uid://b403mdh0a6fj0" path="res://sprites/Personajes/Fernan.png" id="2_mdyxw"]
+
+[resource]
+script = ExtResource("1_8jnmr")
+name = "FERNAN"
+sprite = ExtResource("2_mdyxw")
+metadata/_custom_type_script = "uid://chybjwj2xnwa6"

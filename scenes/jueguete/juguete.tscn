@@ -90,6 +90,7 @@ mouse_filter = 2
 color = Color(0, 0, 0, 1)
 
 [node name="BotonAcusar" type="Button" parent="Control" unique_id=2079978381]
+visible = false
 layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0

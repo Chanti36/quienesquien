@@ -3,6 +3,8 @@ extends Node3D
 @onready var _tabla: MeshInstance3D = $Tabla
 @onready var _cam: Camera3D = $Camera3D
 
+var b_playing := false
+
 var b_onFocus := false
 var b_canEnd := false
 
@@ -23,6 +25,7 @@ var v3_objPos := Vector3(0, 0, 0)
 var f_lerpFocus := 2.0
 
 func _ready() -> void:
+	b_playing = false
 	for i in $Tabla.get_children():
 		arr_fichas.append(i)
 		i_fichasCount +=1
@@ -30,6 +33,8 @@ func _ready() -> void:
 	v3_tablaPos = _tabla.position
 	_vignetteMaterial = $Control/ColorRect.material
 
+func SetUp():
+	b_playing = true
 
 func _process(delta : float) -> void:
 	
@@ -100,6 +105,11 @@ func ShakeTabla(intensity : int) -> void:
 	if intensity == 3:
 		f_shakeTimer = 0.1
 		f_shakeValue = .03
+		$Control/BotonAcusar.visible = true
+	else:
+		$Control/BotonAcusar.visible = false
+
+
 
 
 func _on_acusar() -> void:

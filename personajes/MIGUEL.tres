@@ -1,9 +1,11 @@
 [gd_resource type="Resource" script_class="Speaker" format=3 uid="uid://btq8ddc1jntvd"]
 
 [ext_resource type="Script" uid="uid://chybjwj2xnwa6" path="res://scripts/dialogo/speaker.gd" id="1_sl6np"]
+[ext_resource type="Texture2D" uid="uid://bd3dp42f7hjo6" path="res://sprites/Personajes/Miguel.png" id="2_7rpak"]
 
 [resource]
 script = ExtResource("1_sl6np")
 name = "MIGUEL DE LINDES"
 color = Color(0.7486317, 6.738305e-07, 0.35134038, 1)
+sprite = ExtResource("2_7rpak")
 metadata/_custom_type_script = "uid://chybjwj2xnwa6"

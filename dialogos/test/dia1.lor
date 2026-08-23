@@ -1,0 +1,58 @@
+import personajes
+
+NARRADOR: El relincho de uno de los caballos te trae de vuelta al mundo. El carro se estremece ante los nervios del viejo corcel. Quizá es su pequeña venganza por no dejarle comer.
+BALTASAR: Si quería comer que Miguel se hubiera preparado antes. Pagué por salir tan temprano.
+NARRADOR: El carro traquetea por el camino de piedra y polvo, levantando pequeñas nubes pardas que luchan por hacerse camino entre la suave llovizna que cae sobre este campo castellano. Tras una loma se divisa el valle del pueblo de Alboleta, nuestro destino; villa pequeña y de poco renombre más allá de la casa de los Duques de la Haya, tus solicitores. Veremos que quieren con tanta premura.
+NARRADOR: La lluvia amaina en el momento de pasar la última casa de la última colina antes del poder divisar el pueblo de Alboleta. Desde la estrecha ventana del carro puedes ver un pueblo pequeño, enjuto, pero de buena casa e iglesia. Los campos llenos de ovejas y pastizales son abrazados por unas pequeñas montañas puntiagudas, con un bosque de olmos de fama por bueno y lleno de vida. Todo ello lo atraviesa un camino real de antes de nuestros reyes, anciano y ajado.
+NARRADOR: Una venta marca la entrada al pueblo desde el camino. Acercándose el carro puedes apreciar que una señora te espera en su entrada. De complexión fuerte y [añadir más de la descripción], te saluda con una levísima reverencia de educación aprendida de años de relaciones públicas.
+MUJER_DE_LA_VENTA: ¡Buenos días, caballero! Avisaron de su llegada el pasado día y me han ordenado una habitación a su nombre. ¿Es usted don Baltasar Guevara, verdad? ¿Del Tribunal del Santo Oficio?
+BALTASAR: Fiscal del Santo Oficio en su sección en Castilla la Vieja. Soy yo, si. ¿Es usted Cecilia, la ventera?
+CECILIA: Así es, don Baltasar. Disculpe el desorden que vea dentro, me avisaron con poco tiempo de antelación. ¿A qué se deben estas prisas? Es un caso serio.
+
+choice
+  El Inquisidor General, don Diego de Arce y Reinoso, pasa de camino por su villa de camino a la Real Chancillería de Granada. Hay trabajo que hacer en el sur.
+    CECILIA: ¿Tanto como para no poder tomar un par de días de su agenda?
+    BALTASAR: ¿Cómo cree que se encuentran las grandes cabezas de España ahora mismo, entre la guerra con Francia, las contiendas con Portugal, las malas relaciones con Inglaterra y las luchas contra la herejía? Tienen suerte de que hayan encontrado hueco en su corazón para darles un día, ahora mismo no conceden nada.
+    CECILIA: Tan poco por el hijo de un noble.
+    BALTASAR: Lo suficiente como para pararse.
+
+  Le dan al caso el tiempo que requiere. Ellos son los profesionales, ellos sabrán qué consideran «prisas» o no.
+    NARRADOR: Cecilia frunce el ceño. Claramente no le gustan los profesionales, menos los que son así de cariñosos.
+    CECILIA: Bueno, usted sabrá si tiene el tiempo suficiente, pero espero que no vaya con esos humos a hablar con mis vecinos, yo soy considerada paciente.
+
+  ¿Qué sabe usted del caso?
+    CECILIA: Que un niño ha sido asesinado, don Baltasar. Eso y que parece que no le importe a nadie más allá que para dar chispas a la hoguera de las enemistades.
+    NARRADOR: Hay dolor en sus ojos, pero no parece que sea por el niño. ¿Cómo puede ser?
+
+CECILIA: En fin, venga usted conmigo, vamos a dejar sus cosas en su habitación y le presento en sociedad.
+NARRADOR: Lo que más te sorprende es el olor. Al entrar a la venta un fuerte aroma a fabada impregna el ambiente. No hay puerta entre cocina y sala de estar, y allí el potaje se mantiene caliente desde primeras horas de la mañana. El olor unge la oscura sala, sus pálidas paredes, su finas ventanas, sus parcas mesas y resquebrajadas sillas. No es sitio de nobleza, pero en peores lugares dormiste en Salamanca.
+NARRADOR: Cecilia se adelanta y empieza a subir las escaleras de madera del fondo de la estancia, junto a la barra. No hay nadie en la sala y, por lo que da a entender la falta de ruido, tampoco hay nadie arriba. Subiendo tras ella no puedes evitar mirarla: Cecilia es una mujer adulta, más mayor que tú. Su mano no tiene anillo y lleva el pelo al aire, sin tapar. En otros tiempos hubieras sentido algo, al menos eso es lo que recuerdas.
+  Andáis por el pasillo, que cuenta con media docena de puertas. La del fondo es la tuya: una habitación pequeña, de una cama y una mesita de noche, más que suficiente. Dejas tu bolsa con sus enseres junto a la cama y Cecilia te hace un gesto con la cabeza para salir de nuevo.
+  Al salir de la venta el tiempo ha mejorado y el cielo es de un azul claro, con nubes pomposas. Desde la venta se ve Alboleta al completo, aunque no se encuentra muy lejos, sólo cortado el paso por el Camino Real, poco transitado esta mañana.
+  Junto al camino, a su derecha, empieza una compañía de cipreses, toda en fila de uno. Bajo uno de ellos hay un banco de madera adusto. En él, tres mujeres —y una oveja— hablan con gesto preocupado. Muy a lo lejos ves una cuadrilla de caballos volar hacia el bosque.
+CECILIA: ¡Buenos días, queridas! Aquí tenemos al señor fiscal, don Baltasar. Señor, les presento. La anciana es Pepa, a su lado está Iris y, de pie, Margarita.
+NARRADOR: Las tres mujeres miran en vuestra dirección. Dos de las mujeres están sentadas, una anciana y una joven; la última, que parece la dueña de la oveja, se encuentra de pie. Todas son campesinas, la anciana una cestera y la mujer de pie una ovejera —atendiendo a las herramientas y la cercanía de la oveja merina— pero, ¿de qué trabaja la tercera? Lleva un bastón pero no herramientas de ovejera. No trabaja el mimbre, ni tiene las manos duras del trabajo manual. Además, es más morena de lo que sue-
+PEPA: Hacía tiempo que la inquisición no visitaba este pueblo, don Baltasar. Espero que no se asombre si algunos vecinos están un poco tensos. Es un placer conocerle, soy Pepa, aunque muchas veces me verás llamada «la del banco».
+NARRADOR: Pepa es una mujer muy anciana. Su rostro está curtido, pero la edad parece no haberle quitado ni un ápice de energía. De nariz aguileña, con verrugas y unos ojos claros, Enrique Kramer podría haber soñado a esta anciana para describir a las brujas en su Malleus maleficarum.
+BALTASAR: Un placer Pepa. Un trabajo honrado, el del mimbre, ¿no está ya su marido para hacerlo?
+PEPA: Murió hace tiempo y yo heredé el trabajo más por necesidad que por pena. No da para mucho, pero ya sabe, «con estos mimbres no se puede hacer más que este cesto». Le presento a mis amigas, esta de aquí es Iris.
+NARRADOR: Iris es una chiquilla que ha entrado hace poco en la veintena. No parece venir de una familia con dinero y aunque guapa el arreglo de su pelo y su ropa da a entender que no es vanidosa.
+IRIS: Un placer, señor.
+NARRADOR: La chica levanta la cabeza. Ha pasado de mirar sus pies a los tuyos. Debe darle vergüenza. Además de poco vanidosa, humilde.
+MARGARITA: A Iris le suele costar hablar con desconocidos, espero que la pueda perdonar, Baltasar. Soy Margarita, llevo uno de los mayores rebaños de la villa. Esta oveja de aquí es Dolores.
+DOLORES: (sonido de oveja) BAAA.
+BALTASAR: Un placer Margarita, Dolores.
+NARRADOR: Le haces un gesto de saludo a Margarita y a la oveja tocando la punta de tu sombrero. Un saludo educado para una oveja educada. Hacía bastante que nada te sacaba una risita.
+CECILIA: En fin, estoy presentando al señor Baltasar a los vecinos. Ellas suelen estar a las afueras de la villa, pregúntelas si necesita cualquier cosa, son tan agradables como bonita es Dolores.
+DOLORES: (sonido de oveja) BAAA.
+NARRADOR: Os despedís de las mujeres y empezáis a andar dirección Alboleta.
+BALTASAR: Dígame, Cecilia, no las conozco pero veía al triunvirato del banco nerviosas ante mi presencia. ¿No suelen hablar con hombres?
+CECILIA: No suelen hablar con el Santo Oficio, señor. Aquí han pasado muchas cosas, es una villa maldita por la envidia y el odio, y usted es juez y verdugo. Tienen miedo de que años de malas lenguas les alcancen.
+BALTASAR: ¿Qué podrían tener para que deba preocuparme?
+CECILIA: No puedo responderle yo a eso, señor. Deberá hablar con ellas. Seguro que pueden ver lo bueno que haya en usted, si es que quiere mostrarlo.
+BALTASAR: Soy una lengua de plata si quiero, ¿cómo cree que conseguí este trabajo?
+NARRADOR: La pendiente se incrementa una vez pasáis las primeras casas del pueblo. Es una villa no muy antigua, y las casas no están en mal estado.
+CECILIA: ¿Viniendo de una familia de bien, que le permitió pasar sus años de juvenil entre rosas en una ciudad como Salamanca disfrutando de ser un pendenciero, haciendo contactos que le darían un buen lugar en la sociedad pasara lo que pasara?
+BALTASAR: Puede, pero también soy muy guapo.
+NARRADOR: Cecilia se ríe en alto.
+CECILIA: Y muy gracioso, señor, y muy gracioso…

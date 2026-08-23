@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Speaker" format=3 uid="uid://c8r8sf7fju8vq"]
+
+[ext_resource type="Script" uid="uid://chybjwj2xnwa6" path="res://scripts/dialogo/speaker.gd" id="1_i5w6j"]
+[ext_resource type="Texture2D" uid="uid://caw0byqcwj3xc" path="res://sprites/Personajes/Daciano.png" id="2_0ydsi"]
+
+[resource]
+script = ExtResource("1_i5w6j")
+name = "DACIANO"
+color = Color(0.51955736, 0.14310193, 0.12862682, 1)
+sprite = ExtResource("2_0ydsi")
+metadata/_custom_type_script = "uid://chybjwj2xnwa6"

@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dnuw15skcqbub" path="res://scripts/dialogo/dialogueDrawer.gd" id="1_2nvxk"]
 [ext_resource type="Script" uid="uid://cd18wsstdapmq" path="res://scripts/dialogo/dialogoCtrl.gd" id="1_hrvb4"]
-[ext_resource type="Script" uid="uid://dilkgkw31rvw6" path="res://scripts/dialogo/parallax.gd" id="2_nqn2e"]
+[ext_resource type="Script" uid="uid://dilkgkw31rvw6" path="res://scripts/dialogo/parallaxDialogue.gd" id="2_nqn2e"]
 [ext_resource type="Texture2D" uid="uid://b6eu6ed4sbcxl" path="res://sprites/test/escenario_plaza.png" id="2_xhsqs"]
 [ext_resource type="Texture2D" uid="uid://ci1c7ar64047y" path="res://sprites/test/char.png" id="3_p6f6h"]
 [ext_resource type="FontFile" uid="uid://7m7j0oq00v6y" path="res://misc/IbarraRealNova-VariableFont_wght.ttf" id="5_8v3fu"]
@@ -40,14 +40,15 @@ script = ExtResource("2_nqn2e")
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="Parallax/ParallaxBackground" unique_id=1835679459]
 
-[node name="Background" type="TextureRect" parent="Parallax/ParallaxBackground/ParallaxLayer" unique_id=2116317197]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+[node name="Control" type="Control" parent="Parallax/ParallaxBackground/ParallaxLayer" unique_id=1458618273]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="Background" type="TextureRect" parent="Parallax/ParallaxBackground/ParallaxLayer/Control" unique_id=2116317197]
+custom_minimum_size = Vector2(1920, 1080)
+layout_mode = 1
 offset_right = 1920.0
 offset_bottom = 1080.0
-grow_horizontal = 2
-grow_vertical = 2
 texture = ExtResource("2_xhsqs")
 
 [node name="ParallaxChar" type="ParallaxBackground" parent="Parallax" unique_id=1452795238]

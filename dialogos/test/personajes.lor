@@ -2,11 +2,56 @@ character NARRADOR
   name:NARRADOR
   color:gold
 
+character ALONSO
+  name:ALONSO
+
 character BALTASAR
   name:BALTASAR
   color:red
 
+character CATALINA
+  name:CATALINA
+
+character CECILIA
+  name:CECILIA
+  color:red
+
+character DACIANO
+  name:DACIANO
+
+character DOLORES
+  name:DOLORES
+
+character ELENA
+  name:ELENA
+
+character ENEMESIO
+  name:ENEMESIO
+
+character FERENAN
+  name:FERENAN
+
+character IRIS
+  name:IRIS
+
+character INIGO
+  name:IÑIGO
+
+character MARGARITA
+  name:MARGARITA
+
 character MIGUEL
   name:MIGUEL
   color:blue
+
+character MUJER_DE_LA_VENTA
+ name:MUJER DE LA VENTA
+ color:red
+
+character NINOENCONTRADO
+  name:NIÑO ENCONTRADO
+
+character PEPA
+  name:PEPA
+
 
