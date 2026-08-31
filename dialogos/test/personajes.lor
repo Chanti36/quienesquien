@@ -2,6 +2,9 @@ character NARRADOR
   name:NARRADOR
   color:gold
 
+character ANCIANO
+  name:ANCIANO
+
 character ALONSO
   name:ALONSO
 
@@ -28,8 +31,8 @@ character ELENA
 character ENEMESIO
   name:ENEMESIO
 
-character FERENAN
-  name:FERENAN
+character FERNAN
+  name:FERNAN
 
 character IRIS
   name:IRIS
@@ -46,6 +49,10 @@ character MIGUEL
 
 character MUJER_DE_LA_VENTA
  name:MUJER DE LA VENTA
+ color:red
+
+character MUJER_DESCONOCIDA
+ name:MUJER DESCONOCIDA
  color:red
 
 character NINOENCONTRADO

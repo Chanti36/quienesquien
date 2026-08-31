@@ -1,0 +1,95 @@
+import personajes
+
+NARRADOR: La villa de Alboleta no nada en dinero. Modesta, sus casas cuentan con poca decoración y sus calles podrían tildarse de espartanas. Predomina la piedra y la madera, con paredes de poco encalado. La plaza central conecta algunos comercios, el pilón, la iglesia y la casa de La Haya. El palacio destaca contra el pueblo, mucho más ostentoso de lo que debería. Esta villa es el centro de poder del valle, más por nombre que por tamaño. Viviendo en Valladolid y habiendo vivido tu periodo formativo en Salamanca, el palacio se te hace bastante insignificante, pero cualquier pan de oro en medio de la madera refleja.
+Cecilia se acerca al local con el letrero de la barra de pan. Siendo primeras horas de la tarde, antes de comer, la panadería se llena de una decena de habitantes, la mayoría del pueblo llano. Destaca una monja.
+CECILIA: Aquí podremos encontrar a muchos de nuestros vecinos. Mire, la monja dominica es Catalina. Viene de una familia de grandes hidalgos, los Loyola, pobres como ratas. No consiguieron casar a su segunda hija y aquí la tienes, convertida en monja de las buenas, de las que ayudan a los pobres y enfermos. Es muy educada pero todo el mundo sabe que odia su trabajo. Hay quien dice que tiene un romance secreto, pero yo no sé más.
+
+choice
+  ¿Le cae bien la señora Catalina?
+    CECILIA: No diría que la odio, señor, no se puede odiar a quien no se conoce.
+    BALTASAR: ¿No se deja ver?
+    CECILIA: Muy pocas veces. No cumple con las obligaciones que comparte con sus hermanas, se las pasa en la iglesia y en el palacio, donde se hace pasar por aquello que ella cree ser.
+    BALTASAR: Debe ser duro tenerlo todo en la palma de tu mano y perderlo.
+  Veo que le gusta el chisme, ¿es de buenas cristianas chismear sobre una mujer casada con Jesús?.
+    NARRADOR: Cecilia levanta una ceja y te mira con fuego en los ojos. Es ventera, ¿cómo no va a chismear? Quizá estás entrando en terreno pantanoso.
+    CECILIA: Dice usted que esto es chismear pero tiene un asesino que encontrar y yo le estoy contando la historia del pueblo, ¿no debería de abrir un poco más las orejas y cerrar un poco esa boquita?
+    BALTASAR: Me sorprende su actitud con un verdadero Inquisidor como yo, Cecilia, debería de temer un poco más, ¿sabe?
+    CECILIA: Para eso debería de haber asesinado a un niño.
+    BALTASAR: Me cae usted bien pero no puedo eliminarla como sospechosa todavía, no la conozco lo suficiente.
+    CECILIA: No se preocupe, ya me conocerá estos días.
+  Oiga, debería de ir a hablar con don Alonso de la Haya lo antes posible. No creo que le guste que aquel que investiga sobre su hijo esté dando vueltas antes de saludar.
+    CECILIA: Don Alonso no está aquí.
+    BALTASAR: (el texto tiembla) ¡¿CÓMO?!
+    CECILIA: ¡No me grite, Baltasar! El señor sale de caza con el padre Daciano y Enemesio, el alguacil. Es su actividad favorita, dicen que le relaja mucho.
+    NARRADOR: ¿Cómo puede salir ociosamente en tan horrible momento? ¿Con qué tipo de persona estamos tratando?
+    BALTASAR: Seamos racionales, cada uno pasa el duelo como puede.
+
+CECILIA: Están siendo unos años duros para Alboleta, don Baltasar. No se si está al tanto pero desde hace un tiempo los niños desaparecen de este valle para no volver. Desde el primero de ellos nada ha vuelto a ser lo mismo, todos están distintos. Hasta el mismo señor de las tierras se ha vuelto más callado. Primero su mujer, luego los niños…
+BALTASAR: No tenía ni idea de nada de esto, no aparece en los papeles. ¿Cómo puede haber pasado esto sin que llegue a los tribunales?
+CECILIA: Todas las quejas van a Enemesio, que las traslada a Don Alonso. Por lo que nos han dicho, en las ciudades no tienen interés en este tipo de casos, que hay cosas más importantes.
+BALTASAR: Debe ser duro haber tenido que pasar todo esto, lo lamento.
+CECILIA: Vendrán días mejores ahora que está usted aquí. Verá, aunque suene macabro, la muerte del heredero de los Haya ha sentado bien a algunos en la villa: por fin este caso sube a la palestra y se podrá acabar de una vez con todas.
+  En fin, ya verá lo que le comento. Venga, venga, vamos a comprar algo de comer y a saludar a un amigo.
+NARRADOR: La panadería está a rebosar. La dirige un hombre moreno y de buena voz que discute con una anciana.
+INIGO: ¡Señora, el pan de centeno es a dos maravedís como lo fue ayer y como lo será mañana, un poco de calma, se lo juro por lo más sagrado! ¡Siguiente!
+CECILIA: El panadero es Íñigo, el padre de Iris.
+NARRADOR: La cola es larga, parece que sois los últimos. Normalmente suele haber varias panaderías por ciudad, así que no estás acostumbrado a tanto público en una sola. El griterío es fuerte, e Íñigo parece ser el ojo de la tormenta. Él gestiona los panes y los oros, y se mueve de un cliente a otro como un órgano salta de una nota a otra sin esfuerzo. Tras unos minutos os toca, aunque seáis los últimos.
+INIGO: Hola Cecilia, ¿otra vez por aquí? Creía que el pedido de pan era suficiente.
+CECILIA: Hola Íñigo, querido. El pedido es perfecto, estoy utilizando una excusa para dar una vuelta al pueblo a nuestro invitado. Este es Baltasar Guevara, el fiscal general que ha pedido el Santo Oficio antes de vengan en unos días.
+NARRADOR: Los ojos de Íñigo se abren tanto que parece que van a escapar de su cuerpo.
+INIGO: ¡Encantado, don Baltasar! El pan corre a mi cuenta. Llévese esta, me la había dejado para comer con unos huevos fritos pero tomaré otra de las más pochillas, que esas se las reservo a las viejas malasangre que me vienen al regateo.
+NARRADOR: El hombre tiene gracia en la sangre. Sabe cómo camelarse a la gente, pero nada te impide que tu educación de hombre de clase alta te obligue a saber, a ciencia cierta, que este hombre es gitano. ¿Cómo ha acabado regentando la panadería del pueblo?
+
+choice
+  Se lo agradezco, Íñigo. Dígame, ¿cuánto tiempo lleva en el pueblo? Se ve que no es usted de aquí.
+    CECILIA: Directo al grano, si señor.
+    INIGO: Jajaja, parece que me tiene calado, don Baltasar. No, no soy de este pueblo, mis chiquillos y yo vivimos en la villa desde hace dos décadas.
+    BALTASAR: ¿Y cómo consiguió la panadería? El gremio de panaderos no es pequeña cosa, y en todas las ciudades que he visitado es sabido que les gusta pelear.
+    INIGO: Heredé la panadería de su anterior dueña. Ella fue nuestra albacea cuando llegamos a Alboleta, y lo dió todo para que se viera que éramos buenos cristianos. Tengo los papeles si quiere que se los muestre, no hemos robado nada y nos merecemos el sitio en que nos encontramos.
+    CECILIA: Os prometo que si hay una buena persona en este pueblo ese es Íñigo. Siempre ha estado ahí para todos.
+    BALTASAR: Le tomaré la palabra, Cecilia. Ha sido un placer conocerle, nos veremos estos días.
+    INIGO: Venga por las tardes si puede, si trata de preguntarme por la mañana una marabunta de señoras hambrientas acabará con usted. ¡Nos vemos!
+  ¿Es usted el padre de Iris? Tiene una hija preciosa.
+    NARRADOR: Le brillan los oscuros ojos a Íñigo como perlas de obsidiana.
+    INIGO: Mi hija es la más bonita del mundo, ojalá ella pudiera verlo.
+    BALTASAR: ¿Qué le sucede?
+    CECILIA: Es ciega, Baltasar.
+    BALTASAR: Oh, lo siento mucho.
+    INIGO: No pasa nada, lo ha sido desde siempre, nació con este castigo. Su hermano también tiene sus cosas.
+    NARRADOR: Antes de que puedas preguntar Cecilia interviene.
+    CECILIA: Bueno, yo tampoco tengo todo el día, y hay caballeros esperando. Hablamos mañana, guapo.
+    INIGO: Gracias por las presentaciones, bella. Ha sido un placer, Baltasar, ¡nos vemos!
+  Gracias por la barra. ¿Saben las señoras del pueblo que les das las malas?
+    INIGO: Lo saben y lo hacen saber, pero es un pago justo por oírlas quejarse todo el día, anda que no.
+    BALTASAR: En mi trabajo también escucho mucha señora mayor cuyo problema es la vida, pero no se me había ocurrido darle los consejos malos hasta ahora, tendré que pensármelo.
+    CECILIA: Ni se le ocurra, hombre, una barra de pan te sabe mal un día, un mal consejo…
+    INIGO: Es como un mal amigo, y aquí hay mucho de eso.
+    NARRADOR: ¿Más chismorreos?
+    BALTASAR: ¿Más chismorreos?
+    NARRADOR: No me robes las frases, las conversaciones se pueden hacer muy aburridas.
+    INIGO: No se fie de lo que mucha gente le diga de por aquí, don Baltasar. Dirán que son buenos cristianos, pero entre ellos hay más diablos que en algunos círculos del infierno. Hay algo en este pueblo que huele a sangre desde las desapariciones de los chicos.
+    CECILIA: No todo el mundo es así, Íñigo, de verdad que le aprecian.
+    INIGO: Solo espero que todavía me aprecien una vez pase por aquí la Inquisición…
+
+NARRADOR: Con el pan comprado planeáis alejaros de la plaza. Cecilia se para y señala a un hombre que pasa de camino. Tiene sangre en el delantal y el sudor le empapa la frente.
+FERNAN: Buena tarde, Cecilia, le tengo preparado ya el pedido, aunque no he podido conseguirle secreto, el cerdo está complejo estos meses por la zona. Caballero.
+CECILIA: Baltasar, le presento a Fernán, el carnicero del pueblo. Fernán, este es don Baltasar Guevara, el fiscal de la inquisición.
+FERNAN: Oh… Encantado.
+NARRADOR: Fernán se encoge, como tratando de esconderse. Su mirada se pierde y parece estar a punto de echar a correr.
+FERNAN: Debo volver a la carnicería, he dejado a mi mujer al cargo pero no sabe qué queda en el inventario, es un placer conocerle, caballero.
+NARRADOR: Con un rápido giro, Fernán desaparece antes de que puedas abrir la boca.
+BALTASAR: Un hombre sospechoso, cuanto menos.
+MUJER_DESCONOCIDA: Es un hombre de pocas palabras de normal, pero usted es alguien a quien no hay que hablar a la ligera, caballero. Trae desgracia por donde pasa.
+NARRADOR: Detrás vuestra se encontraba una mujer alta, pelirroja, de grandes brazos y ancha espalda. Sujeta una ristra de leña atada por una cinta de cuero vieja. Te mira desafiante, de igual a igual, como pocas mujeres te han mirado alguna vez, menos de clase baja.
+CECILIA: ¡Ah, Elena! Esperaba que fuera más difícil encontrarte. Don Baltasar, ella es Elena, la leñadora de la villa.
+BALTASAR: ¿Usted es el leñador del pueblo?
+ELENA: Todavía no me ha salido el apéndice entre las piernas, así que soy sólo leñadora.
+BALTASAR: Disculpe mis modales, Elena. He de decir que no es común ver a una mujer en este tipo de trabajos. Se supone que no están hechas para este trabajo físico, menos en determinados días del mes.
+ELENA: ¿Qué sabe usted sobre mi cuerpo que yo no sepa, don Baltasar?
+BALTASAR: Nada, por dios.
+NARRADOR: Elena es un gato y tu eres un ratón. Un ratón ciego, torpe y tonto. No ganas nada con estas preguntas.
+BALTASAR: ¿Por dónde vive? Puede que deba acercarme a hacerle algunas preguntas.
+ELENA: Me encontrará si sigue el camino al bosque. No hay nada más aparte de mi casa, así que no se perderá. Buena tarde.
+NARRADOR: Elena marcha en la dirección opuesta a buena velocidad. Cuando pasa la gente de alrededor se aparta y cuchichea. Las madres apartan a los hijos y los hombres maldicen entre dientes. Este es un pueblo con apestados.
+CECILIA: ¿Qué le parece el pueblo, Baltasar? Es un lugar con su historia, pero ¿qué pueblo no la tiene?
+BALTASAR: Creo que voy a dormir muy poco.

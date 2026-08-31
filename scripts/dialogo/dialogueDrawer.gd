@@ -10,12 +10,21 @@ const _dialogueOption = preload("uid://d2iqnyr5luebc")
 @onready var _scrollContainer: ScrollContainer = $PanelContainer/ScrollContainer
 @onready var _scrollBar : ScrollBar = _scrollContainer.get_v_scroll_bar()
 
+@onready var _charSprite: TextureRect = $"../Parallax/ParallaxChar/ParallaxLayer/PJChar/Char"
+@onready var _charAnim: AnimationPlayer = $"../Parallax/ParallaxChar/ParallaxLayer/PJChar/AnimationPlayer"
+
+var t2d_charSprite : Texture2D
+var str_lastCharName := ""
+
 
 var loreline: Loreline = Loreline.shared()
-
 var b_dialogueShown := false
+var b_overSafeArea  := false
 
-var b_overSafeArea := false
+var b_dialogueZone  := false
+var b_entiesZone    := false
+
+
 
 ## CUESTIONES
 #
@@ -41,10 +50,7 @@ func Start(dialogueName : String) -> void:
 		return
 		
 	loreline.play(script, _on_dialogue, _on_choice, _on_finished)
-	print("--START ", dialogueName)
-
-
-
+	print("DEBUG -> START ", dialogueName)
 
 signal INPUT
 func _input(_event: InputEvent) -> void:
@@ -52,30 +58,45 @@ func _input(_event: InputEvent) -> void:
 		if !b_overSafeArea:
 			INPUT.emit()
 
-func _mouse_over_dialogue_box() -> void:
-	b_overSafeArea = true
-	print("111111111111111111111-> enter")
 
-func _mouse_exit_dialogue_box() -> void:
-	b_overSafeArea = false
-	print("2222222222222222222-> exit")
+	#print("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA-> enter")
+	#b_overSafeArea = true
+	#print("BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB-> enter")
+	#b_overSafeArea = false
+#TODO ARREGLAER
+func _on_scroll_container_mouse_entered() -> void:
+	b_dialogueZone  = true
+	#print("!!!!!!!!!!!!!!!!!!!!!!!!!! DEAD ZONE")
 
-#TODO NO FUNCIONA +AÑADIR SPRITE PERSONAJES CUANDO TOCA
+
+func _on_scroll_container_mouse_exited() -> void:
+	b_dialogueZone  = false
+	#print("?????????????????????????? DEAD ZONE")
+
+
+func _on_dialogue_entries_mouse_entered() -> void:
+	b_entiesZone    = true
+	#print("?????????????????????????? DEAD ZONE")
+
+
+func _on_dialogue_entries_mouse_exited() -> void:
+	b_entiesZone    = false
+	#print("?????????????????????????? DEAD ZONE")
+
+
 
 #region LORELINE
 func _on_dialogue(interp: LorelineInterpreter, character: String, text: String, _tags: Array, advance: Callable) -> void:
 	if !b_dialogueShown:
 		if character != "":
-			print("3333333333333333333333333333333 ", character)
 			var display_name: String = interp.get_character_field(character, "name")
-
 			if display_name != "":
 				character = display_name
 			else:
 				push_error("no display name for character: " + character)
 			Next(character + ": " + text, true)
 		else:
-			push_warning("no character name on: " + text)
+			#push_warning("no character name on: " + text)
 			Next(text, false)
 		b_dialogueShown = true
 	
@@ -84,7 +105,9 @@ func _on_dialogue(interp: LorelineInterpreter, character: String, text: String, 
 	await INPUT
 	b_dialogueShown = false
 	advance.call()
+	NEXTPHRASE.emit()
 
+signal NEXTPHRASE
 
 func _on_choice(_interp: LorelineInterpreter, options: Array, select: Callable) -> void:
 	var entry = _dialogueEntry.instantiate()
@@ -105,6 +128,7 @@ func _on_finished(_interp: LorelineInterpreter)->float:
 	DIALOGUEENDED.emit()
 	for i in _dialogueEntriesContaier.get_children():
 		_dialogueEntriesContaier.remove_child(i)
+	str_lastCharName = ""
 	return .1
 signal DIALOGUEENDED
 
@@ -126,8 +150,7 @@ func Next(text : String, charName : bool) -> void:
 	_dialogueEntriesContaier.add_child(entry)
 	_fade_in(entry)
 	if charName:
-		entry.SetContent(text.right(text.length()- text.find(":")),
-						 GetSpeakerResource(text.substr(0, text.find(":"))))
+		entry.SetContent(text.right(text.length()- text.find(":")), GetSpeakerResource(text.substr(0, text.find(":"))))
 	else:
 		entry.SetContent(text)
 
@@ -135,11 +158,23 @@ func Next(text : String, charName : bool) -> void:
 func GetSpeakerResource(speakerName : String) -> Speaker:
 	var speakerPath = "%s%s.tres" % [SPEAKERFOLDER, speakerName]
 	if ResourceLoader.exists(speakerPath):
-		return load(speakerPath)
+		var speaker = load(speakerPath)
+		#SET NAME AND PLAY ANIMATION
+		if speaker.name != str_lastCharName && speaker.sprite != null && speaker.sprite != _charSprite.texture:
+			t2d_charSprite = speaker.sprite
+			_charAnim.play("changeSprite")
+			str_lastCharName = speaker.name
+		return speaker
+	push_error("GetSpeakerResource NO RESOURCE ->  " + speakerName)
 	var newSpeaker = Speaker.new()
 	newSpeaker.name = speakerName
 	return newSpeaker
 
+
+#CALLED FROM ANIMATION
+func ChangeCharSprite()-> void:
+	if t2d_charSprite:
+		_charSprite.texture = t2d_charSprite
 
 
 #region FUNCTIONALITY
@@ -147,7 +182,7 @@ func GetSpeakerResource(speakerName : String) -> Speaker:
 func _onScrollBarChanged() -> void:
 	var scrollValue = _scrollBar.max_value
 	if scrollValue != _scrollContainer.scroll_vertical:
-		_scrollContainer.scroll_vertical = scrollValue
+		_scrollContainer.scroll_vertical = int(scrollValue)
 
 func _fade_in(node: Control) -> void:
 	node.modulate.a = 0

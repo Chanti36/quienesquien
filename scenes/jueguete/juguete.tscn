@@ -12,6 +12,30 @@ background_color = Color(0.16, 0.112986654, 0.0944, 1)
 [sub_resource type="BoxMesh" id="BoxMesh_b52nb"]
 size = Vector3(1, 0.1, 1)
 
+[sub_resource type="Shader" id="Shader_o1xot"]
+code = "shader_type spatial;
+render_mode blend_mix, cull_front, unshaded;
+
+uniform vec4 color : source_color = vec4(1,0,0,1);
+uniform float size : hint_range(1.0, 1.5, 0.01) = 1.05;
+
+void vertex() {
+	VERTEX *= size;
+}
+
+void fragment() {
+	ALBEDO = color.rgb;
+	ALPHA = color.a;
+}
+"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_o6p2h"]
+resource_local_to_scene = true
+render_priority = 0
+shader = SubResource("Shader_o1xot")
+shader_parameter/color = Color(0, 0, 0, 1)
+shader_parameter/size = 1.0
+
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_b52nb"]
 shader = ExtResource("4_uw0po")
 shader_parameter/outerRadius = 2.50000011875
@@ -30,6 +54,9 @@ mesh = SubResource("BoxMesh_b52nb")
 
 [node name="Ficha" parent="Tabla" unique_id=538999178 instance=ExtResource("2_ur4ki")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3, 0.15, 0.3)
+
+[node name="Modelo" parent="Tabla/Ficha" index="0" unique_id=1067593401]
+material_overlay = SubResource("ShaderMaterial_o6p2h")
 
 [node name="Ficha2" parent="Tabla" unique_id=889708972 instance=ExtResource("2_ur4ki")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.1, 0.15, 0.3)
@@ -108,3 +135,5 @@ text = "Acusar"
 script = ExtResource("4_o1xot")
 
 [connection signal="button_up" from="Control/BotonAcusar" to="." method="_on_acusar"]
+
+[editable path="Tabla/Ficha"]

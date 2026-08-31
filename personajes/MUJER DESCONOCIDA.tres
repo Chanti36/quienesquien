@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Speaker" format=3 uid="uid://cgt6a638foi01"]
+
+[ext_resource type="Script" uid="uid://chybjwj2xnwa6" path="res://scripts/dialogo/speaker.gd" id="1_3dyak"]
+[ext_resource type="Texture2D" uid="uid://brdp8pgtgrxm1" path="res://sprites/Personajes/Elena.png" id="2_vmr34"]
+
+[resource]
+script = ExtResource("1_3dyak")
+name = "MUJER DESCONOCIDA"
+color = Color(1.0588765e-06, 0.6513011, 0.2836894, 1)
+sprite = ExtResource("2_vmr34")
+metadata/_custom_type_script = "uid://chybjwj2xnwa6"

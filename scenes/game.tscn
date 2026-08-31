@@ -16,75 +16,16 @@
 [ext_resource type="Texture2D" uid="uid://dprs1jlagb1v" path="res://icon.svg" id="10_1kice"]
 [ext_resource type="Script" uid="uid://dilkgkw31rvw6" path="res://scripts/dialogo/parallaxDialogue.gd" id="10_bt5mj"]
 [ext_resource type="Texture2D" uid="uid://b6eu6ed4sbcxl" path="res://sprites/test/escenario_plaza.png" id="11_e1j6l"]
-[ext_resource type="Texture2D" uid="uid://ci1c7ar64047y" path="res://sprites/test/char.png" id="12_pl11u"]
 [ext_resource type="Texture2D" uid="uid://ihoyjy5juhyk" path="res://sprites/test/cuadro_texto.png" id="13_bhx41"]
+[ext_resource type="Texture2D" uid="uid://c4tf4uppuc7ej" path="res://sprites/Personajes/Pepa.png" id="13_bt5mj"]
 [ext_resource type="Script" uid="uid://dnuw15skcqbub" path="res://scripts/dialogo/dialogueDrawer.gd" id="15_qnb83"]
 [ext_resource type="Script" uid="uid://dfs3mddq0kay5" path="res://scripts/dialogo/dialogueEntry.gd" id="16_sww3w"]
 [ext_resource type="Texture2D" uid="uid://brq3feimnaslo" path="res://sprites/test/degradado_texto.png" id="17_suyxu"]
 [ext_resource type="Texture2D" uid="uid://bl8ndlrr4i02k" path="res://sprites/test/ui_marco.png" id="18_sgl2t"]
 [ext_resource type="Texture2D" uid="uid://bebnk3obechvp" path="res://sprites/test/menuprincipal.jpg" id="20_bt5mj"]
 
-[sub_resource type="Gradient" id="Gradient_ml2m4"]
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_ml2m4"]
-gradient = SubResource("Gradient_ml2m4")
-
 [sub_resource type="Animation" id="Animation_e1j6l"]
 length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Char:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 1)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Char:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(-1043, -2713)]
-}
-
-[sub_resource type="Animation" id="Animation_bt5mj"]
-resource_name = "fadeIn"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Char:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Char:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(-593.18195, -2713.6365), Vector2(-1043, -2713)]
-}
-
-[sub_resource type="Animation" id="Animation_pl11u"]
-resource_name = "fadeOut"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -92,10 +33,10 @@ tracks/0/path = NodePath("Char:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(-1043, -2713), Vector2(-1456.8184, -2713.6365)]
+"values": [Vector2(-1208, -1080)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -104,17 +45,58 @@ tracks/1/path = NodePath("Char:modulate")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_bt5mj"]
+resource_name = "changeSprite"
+length = 0.4
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../../../../DialogueDrawer")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.2),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"ChangeCharSprite"
+}]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Char:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-1208, -1080), Vector2(-1500, -1080), Vector2(-1000, -1080), Vector2(-1208, -1080)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Char:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_e1j6l"]
 _data = {
 &"RESET": SubResource("Animation_e1j6l"),
-&"fadeIn": SubResource("Animation_bt5mj"),
-&"fadeOut": SubResource("Animation_pl11u")
+&"changeSprite": SubResource("Animation_bt5mj")
 }
 
 [sub_resource type="Theme" id="Theme_yljqp"]
@@ -126,6 +108,11 @@ RichTextLabel/font_sizes/normal_font_size = 25
 RichTextLabel/fonts/normal_font = ExtResource("4_p57ef")
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_m2pct"]
+
+[sub_resource type="Gradient" id="Gradient_ml2m4"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_ml2m4"]
+gradient = SubResource("Gradient_ml2m4")
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_u5sy4"]
 
@@ -284,8 +271,169 @@ shader_parameter/seed = 0.0
 [node name="Game" type="Node" unique_id=263974649]
 script = ExtResource("1_u5sy4")
 
+[node name="Juguete" parent="." unique_id=1374627053 instance=ExtResource("2_lbhrr")]
+
+[node name="DialogueCtrl" type="Control" parent="." unique_id=1630039718]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("9_37s47")
+
+[node name="Parallax" type="Control" parent="DialogueCtrl" unique_id=732161371]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("10_bt5mj")
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="DialogueCtrl/Parallax" unique_id=30386127]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="DialogueCtrl/Parallax/ParallaxBackground" unique_id=1835679459]
+
+[node name="Control" type="Control" parent="DialogueCtrl/Parallax/ParallaxBackground/ParallaxLayer" unique_id=1458618273]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="Background" type="TextureRect" parent="DialogueCtrl/Parallax/ParallaxBackground/ParallaxLayer/Control" unique_id=2116317197]
+custom_minimum_size = Vector2(1920, 1080)
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("11_e1j6l")
+
+[node name="ParallaxChar" type="ParallaxBackground" parent="DialogueCtrl/Parallax" unique_id=1452795238]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="DialogueCtrl/Parallax/ParallaxChar" unique_id=880303096]
+
+[node name="PJChar" type="Control" parent="DialogueCtrl/Parallax/ParallaxChar/ParallaxLayer" unique_id=1168617682]
+layout_mode = 3
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 1208.0
+offset_top = 1080.0
+offset_right = 1208.0
+offset_bottom = 1080.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Char" type="TextureRect" parent="DialogueCtrl/Parallax/ParallaxChar/ParallaxLayer/PJChar" unique_id=837712290]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -1208.0
+offset_top = -1080.0
+offset_right = 712.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("13_bt5mj")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="DialogueCtrl/Parallax/ParallaxChar/ParallaxLayer/PJChar" unique_id=522542901]
+libraries/ = SubResource("AnimationLibrary_e1j6l")
+
+[node name="DialogueBg" type="TextureRect" parent="DialogueCtrl" unique_id=1715875861]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 105.0
+offset_top = 46.0
+offset_right = -1183.0
+offset_bottom = -44.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 0
+texture = ExtResource("13_bhx41")
+
+[node name="DialogueDrawer" type="MarginContainer" parent="DialogueCtrl" unique_id=115939764]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_left = 100.0
+offset_right = 735.0
+grow_vertical = 2
+theme = SubResource("Theme_yljqp")
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 45
+theme_override_constants/margin_right = 25
+theme_override_constants/margin_bottom = 106
+script = ExtResource("15_qnb83")
+
+[node name="PanelContainer" type="PanelContainer" parent="DialogueCtrl/DialogueDrawer" unique_id=234794570]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_m2pct")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="DialogueCtrl/DialogueDrawer/PanelContainer" unique_id=1389591844]
+layout_mode = 2
+theme_override_colors/scroll_hint_vertical_color = Color(0.44313726, 0.3254902, 0.19607843, 1)
+theme_override_colors/scroll_hint_horizontal_color = Color(0.70980394, 0.59607846, 0.37254903, 1)
+theme_override_constants/scrollbar_h_separation = 30
+vertical_scroll_mode = 2
+
+[node name="DialogueEntries" type="VBoxContainer" parent="DialogueCtrl/DialogueDrawer/PanelContainer/ScrollContainer" unique_id=1742221018]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+alignment = 2
+
+[node name="DialogueEntry" type="MarginContainer" parent="DialogueCtrl/DialogueDrawer/PanelContainer/ScrollContainer/DialogueEntries" unique_id=71812865]
+layout_mode = 2
+script = ExtResource("16_sww3w")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="DialogueCtrl/DialogueDrawer/PanelContainer/ScrollContainer/DialogueEntries/DialogueEntry" unique_id=171339835]
+layout_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="DialogueCtrl/DialogueDrawer/PanelContainer/ScrollContainer/DialogueEntries/DialogueEntry/VBoxContainer" unique_id=929887069]
+layout_mode = 2
+bbcode_enabled = true
+text = "
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+"
+fit_content = true
+
+[node name="DialogueOver" type="TextureRect" parent="DialogueCtrl" unique_id=374720331]
+layout_mode = 0
+offset_left = 105.0
+offset_top = 46.0
+offset_right = 737.0
+offset_bottom = 1036.0
+mouse_filter = 2
+mouse_behavior_recursive = 1
+texture = ExtResource("17_suyxu")
+
+[node name="Marco" type="TextureRect" parent="DialogueCtrl" unique_id=624198283]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+mouse_behavior_recursive = 1
+texture = ExtResource("18_sgl2t")
+
 [node name="Mapa" type="Control" parent="." unique_id=978579870]
-visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -411,6 +559,7 @@ texture_normal = ExtResource("10_1kice")
 texture_pressed = SubResource("GradientTexture2D_ml2m4")
 
 [node name="Venta" type="TextureButton" parent="Mapa" unique_id=1774999141]
+visible = false
 layout_mode = 0
 offset_left = 1688.0
 offset_top = 692.0
@@ -420,6 +569,7 @@ texture_normal = ExtResource("10_1kice")
 texture_pressed = SubResource("GradientTexture2D_ml2m4")
 
 [node name="Cruce de caminos" type="TextureButton" parent="Mapa" unique_id=696815331]
+visible = false
 layout_mode = 0
 offset_left = 1193.0
 offset_top = 820.0
@@ -429,6 +579,7 @@ texture_normal = ExtResource("10_1kice")
 texture_pressed = SubResource("GradientTexture2D_ml2m4")
 
 [node name="Sima" type="TextureButton" parent="Mapa" unique_id=1623313945]
+visible = false
 layout_mode = 0
 offset_left = 1578.0
 offset_top = 114.0
@@ -438,6 +589,7 @@ texture_normal = ExtResource("10_1kice")
 texture_pressed = SubResource("GradientTexture2D_ml2m4")
 
 [node name="Iglesia" type="TextureButton" parent="Mapa" unique_id=331093374]
+visible = false
 layout_mode = 0
 offset_left = 1321.0
 offset_top = 235.0
@@ -447,6 +599,7 @@ texture_normal = ExtResource("10_1kice")
 texture_pressed = SubResource("GradientTexture2D_ml2m4")
 
 [node name="Plaza" type="TextureButton" parent="Mapa" unique_id=1685951311]
+visible = false
 layout_mode = 0
 offset_left = 1193.0
 offset_top = 363.0
@@ -456,6 +609,7 @@ texture_normal = ExtResource("10_1kice")
 texture_pressed = SubResource("GradientTexture2D_ml2m4")
 
 [node name="Palacio" type="TextureButton" parent="Mapa" unique_id=1950620794]
+visible = false
 layout_mode = 0
 offset_left = 901.0
 offset_top = 363.0
@@ -464,168 +618,7 @@ offset_bottom = 491.0
 texture_normal = ExtResource("10_1kice")
 texture_pressed = SubResource("GradientTexture2D_ml2m4")
 
-[node name="Juguete" parent="." unique_id=1374627053 instance=ExtResource("2_lbhrr")]
-visible = false
-
-[node name="DialogueCtrl" type="Control" parent="." unique_id=1630039718]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-script = ExtResource("9_37s47")
-
-[node name="Parallax" type="Control" parent="DialogueCtrl" unique_id=732161371]
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-script = ExtResource("10_bt5mj")
-
-[node name="ParallaxBackground" type="ParallaxBackground" parent="DialogueCtrl/Parallax" unique_id=30386127]
-
-[node name="ParallaxLayer" type="ParallaxLayer" parent="DialogueCtrl/Parallax/ParallaxBackground" unique_id=1835679459]
-
-[node name="Control" type="Control" parent="DialogueCtrl/Parallax/ParallaxBackground/ParallaxLayer" unique_id=1458618273]
-layout_mode = 3
-anchors_preset = 0
-
-[node name="Background" type="TextureRect" parent="DialogueCtrl/Parallax/ParallaxBackground/ParallaxLayer/Control" unique_id=2116317197]
-custom_minimum_size = Vector2(1920, 1080)
-layout_mode = 0
-offset_right = 1920.0
-offset_bottom = 1080.0
-texture = ExtResource("11_e1j6l")
-
-[node name="ParallaxChar" type="ParallaxBackground" parent="DialogueCtrl/Parallax" unique_id=1452795238]
-
-[node name="ParallaxLayer" type="ParallaxLayer" parent="DialogueCtrl/Parallax/ParallaxChar" unique_id=880303096]
-
-[node name="PJChar" type="Control" parent="DialogueCtrl/Parallax/ParallaxChar/ParallaxLayer" unique_id=1168617682]
-layout_mode = 3
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = 1208.0
-offset_top = 1080.0
-offset_right = 1208.0
-offset_bottom = 1080.0
-grow_horizontal = 2
-grow_vertical = 0
-scale = Vector2(0.43999997, 0.43999997)
-
-[node name="Char" type="TextureRect" parent="DialogueCtrl/Parallax/ParallaxChar/ParallaxLayer/PJChar" unique_id=837712290]
-layout_mode = 1
-anchors_preset = 12
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -1043.0
-offset_top = -2713.0
-offset_right = 1043.0
-grow_horizontal = 2
-grow_vertical = 0
-texture = ExtResource("12_pl11u")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="DialogueCtrl/Parallax/ParallaxChar/ParallaxLayer/PJChar" unique_id=522542901]
-libraries/ = SubResource("AnimationLibrary_e1j6l")
-
-[node name="DialogueBg" type="TextureRect" parent="DialogueCtrl" unique_id=1715875861]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 105.0
-offset_top = 46.0
-offset_right = -1183.0
-offset_bottom = -44.0
-mouse_filter = 0
-texture = ExtResource("13_bhx41")
-
-[node name="DialogueDrawer" type="MarginContainer" parent="DialogueCtrl" unique_id=115939764]
-layout_mode = 1
-anchors_preset = 9
-anchor_bottom = 1.0
-offset_left = 100.0
-offset_right = 735.0
-grow_vertical = 2
-theme = SubResource("Theme_yljqp")
-theme_override_constants/margin_left = 25
-theme_override_constants/margin_top = 45
-theme_override_constants/margin_right = 25
-theme_override_constants/margin_bottom = 106
-script = ExtResource("15_qnb83")
-
-[node name="PanelContainer" type="PanelContainer" parent="DialogueCtrl/DialogueDrawer" unique_id=234794570]
-custom_minimum_size = Vector2(300, 0)
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxEmpty_m2pct")
-
-[node name="ScrollContainer" type="ScrollContainer" parent="DialogueCtrl/DialogueDrawer/PanelContainer" unique_id=1389591844]
-layout_mode = 2
-theme_override_colors/scroll_hint_vertical_color = Color(0.44313726, 0.3254902, 0.19607843, 1)
-theme_override_colors/scroll_hint_horizontal_color = Color(0.70980394, 0.59607846, 0.37254903, 1)
-theme_override_constants/scrollbar_h_separation = 30
-
-[node name="DialogueEntries" type="VBoxContainer" parent="DialogueCtrl/DialogueDrawer/PanelContainer/ScrollContainer" unique_id=1742221018]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-alignment = 2
-
-[node name="DialogueEntry" type="MarginContainer" parent="DialogueCtrl/DialogueDrawer/PanelContainer/ScrollContainer/DialogueEntries" unique_id=71812865]
-layout_mode = 2
-script = ExtResource("16_sww3w")
-
-[node name="VBoxContainer" type="VBoxContainer" parent="DialogueCtrl/DialogueDrawer/PanelContainer/ScrollContainer/DialogueEntries/DialogueEntry" unique_id=171339835]
-layout_mode = 2
-
-[node name="RichTextLabel" type="RichTextLabel" parent="DialogueCtrl/DialogueDrawer/PanelContainer/ScrollContainer/DialogueEntries/DialogueEntry/VBoxContainer" unique_id=929887069]
-layout_mode = 2
-bbcode_enabled = true
-text = "
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-"
-fit_content = true
-
-[node name="DialogueOver" type="TextureRect" parent="DialogueCtrl" unique_id=374720331]
-layout_mode = 0
-offset_left = 105.0
-offset_top = 46.0
-offset_right = 737.0
-offset_bottom = 1036.0
-mouse_filter = 2
-mouse_behavior_recursive = 1
-texture = ExtResource("17_suyxu")
-
-[node name="Marco" type="TextureRect" parent="DialogueCtrl" unique_id=624198283]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-mouse_filter = 2
-mouse_behavior_recursive = 1
-texture = ExtResource("18_sgl2t")
-
 [node name="MainMenu" type="Control" parent="." unique_id=802062527]
-visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -667,6 +660,11 @@ alignment = 0
 [node name="Button_Continuar" type="Button" parent="MainMenu/MarginButtons/VBoxContainer" unique_id=53995679]
 layout_mode = 2
 text = " Continuar"
+alignment = 0
+
+[node name="Button_Ajustes" type="Button" parent="MainMenu/MarginButtons/VBoxContainer" unique_id=268297586]
+layout_mode = 2
+text = "Ⱥɉᵾꞩⱦēꞩ"
 alignment = 0
 
 [node name="Button_Salir" type="Button" parent="MainMenu/MarginButtons/VBoxContainer" unique_id=1339501922]
@@ -719,7 +717,6 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Transition" type="Control" parent="." unique_id=2128301663]
-visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -765,17 +762,21 @@ mouse_filter = 2
 [node name="SaveData" type="Node" parent="." unique_id=1338869820]
 script = ExtResource("8_gee14")
 
+[connection signal="DIALOGUEEND" from="DialogueCtrl" to="." method="_on_dialogue_end"]
+[connection signal="DIALOGUEENDED" from="DialogueCtrl/DialogueDrawer" to="DialogueCtrl" method="_on_dialogue_drawer_END"]
+[connection signal="NEXTPHRASE" from="DialogueCtrl/DialogueDrawer" to="DialogueCtrl" method="_on_dialogueDrawer_nextphrase"]
+[connection signal="mouse_entered" from="DialogueCtrl/DialogueDrawer/PanelContainer/ScrollContainer" to="DialogueCtrl/DialogueDrawer" method="_on_scroll_container_mouse_entered"]
+[connection signal="mouse_exited" from="DialogueCtrl/DialogueDrawer/PanelContainer/ScrollContainer" to="DialogueCtrl/DialogueDrawer" method="_on_scroll_container_mouse_exited"]
+[connection signal="mouse_entered" from="DialogueCtrl/DialogueDrawer/PanelContainer/ScrollContainer/DialogueEntries" to="DialogueCtrl/DialogueDrawer" method="_on_dialogue_entries_mouse_entered"]
+[connection signal="mouse_exited" from="DialogueCtrl/DialogueDrawer/PanelContainer/ScrollContainer/DialogueEntries" to="DialogueCtrl/DialogueDrawer" method="_on_dialogue_entries_mouse_exited"]
 [connection signal="button_up" from="Mapa/Bosque" to="Mapa" method="_on_Bosque"]
+[connection signal="mouse_entered" from="Mapa/Bosque" to="Mapa" method="_on_bosque_mouse_entered"]
 [connection signal="button_up" from="Mapa/Venta" to="Mapa" method="_on_Venta"]
 [connection signal="button_up" from="Mapa/Cruce de caminos" to="Mapa" method="_on_Cruce_de_caminos"]
 [connection signal="button_up" from="Mapa/Sima" to="Mapa" method="_on_Sima"]
 [connection signal="button_up" from="Mapa/Iglesia" to="Mapa" method="_on_Iglesia"]
 [connection signal="button_up" from="Mapa/Plaza" to="Mapa" method="_on_Plaza"]
 [connection signal="button_up" from="Mapa/Palacio" to="Mapa" method="_on_Palacio"]
-[connection signal="DIALOGUEEND" from="DialogueCtrl" to="." method="_on_dialogue_end"]
-[connection signal="mouse_entered" from="DialogueCtrl/DialogueBg" to="DialogueCtrl/DialogueDrawer" method="_mouse_over_dialogue_box"]
-[connection signal="mouse_exited" from="DialogueCtrl/DialogueBg" to="DialogueCtrl/DialogueDrawer" method="_mouse_exit_dialogue_box"]
-[connection signal="DIALOGUEENDED" from="DialogueCtrl/DialogueDrawer" to="DialogueCtrl" method="_on_dialogue_drawer_END"]
 [connection signal="button_up" from="MainMenu/MarginButtons/VBoxContainer/Button_NuevaPartida" to="." method="_on_nueva_partida_button_up"]
 [connection signal="button_up" from="MainMenu/MarginButtons/VBoxContainer/Button_Continuar" to="." method="_on_continuar_button_up"]
 [connection signal="button_up" from="MainMenu/MarginButtons/VBoxContainer/Button_Salir" to="." method="_on_salir_button_up"]

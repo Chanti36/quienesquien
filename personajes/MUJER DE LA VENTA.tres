@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Speaker" format=3 uid="uid://4jtt7h1inq6s"]
+
+[ext_resource type="Script" uid="uid://chybjwj2xnwa6" path="res://scripts/dialogo/speaker.gd" id="1_gtyp0"]
+[ext_resource type="Texture2D" uid="uid://bq427vmurng6d" path="res://sprites/Personajes/Cecilia.png" id="2_7dvf6"]
+
+[resource]
+script = ExtResource("1_gtyp0")
+name = "MUJER DE LA VENTA"
+sprite = ExtResource("2_7dvf6")
+metadata/_custom_type_script = "uid://chybjwj2xnwa6"

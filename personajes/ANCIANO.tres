@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Speaker" format=3 uid="uid://br2lgponins5l"]
+
+[ext_resource type="Script" uid="uid://chybjwj2xnwa6" path="res://scripts/dialogo/speaker.gd" id="1_aiac0"]
+[ext_resource type="Texture2D" uid="uid://bd3dp42f7hjo6" path="res://sprites/Personajes/Miguel.png" id="2_adtlr"]
+
+[resource]
+script = ExtResource("1_aiac0")
+name = "ANCIANO"
+color = Color(0.4506483, 0.4506483, 0.45064825, 1)
+sprite = ExtResource("2_adtlr")
+metadata/_custom_type_script = "uid://chybjwj2xnwa6"

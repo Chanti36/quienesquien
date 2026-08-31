@@ -105,9 +105,10 @@ func ShakeTabla(intensity : int) -> void:
 	if intensity == 3:
 		f_shakeTimer = 0.1
 		f_shakeValue = .03
-		$Control/BotonAcusar.visible = true
+		#$Control/BotonAcusar.visible = true
 	else:
-		$Control/BotonAcusar.visible = false
+		pass
+		#$Control/BotonAcusar.visible = false
 
 
 
